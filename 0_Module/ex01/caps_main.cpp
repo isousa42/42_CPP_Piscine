@@ -26,7 +26,7 @@ void    display_search(PhoneBook *phone_book, int round, int index)
     int stop = index;
     int i = 0;
 
-    std::cout << "\nSEARCHING IN CAPS:\n" << std::endl;
+    std::cout << "\nCONTACTS IN CAPS:\n";
 
     if (round == 1)
         stop = 8;
@@ -41,11 +41,16 @@ void    display_search(PhoneBook *phone_book, int round, int index)
 
 void    display_contact(PhoneBook *phone_book, int i)
 {
-
+    std::cout << "\nCONTACT NUMBER " << i + 1 << ":\n" << std::endl;
+    std::cout << "First Name: ";
     std::cout << phone_book->contact[i].first_name << std::endl;
+    std::cout << "Last Name: ";
     std::cout << phone_book->contact[i].last_name << std::endl;
+    std::cout << "Nickame: ";
     std::cout << phone_book->contact[i].nickname << std::endl;
+    std::cout << "Phone Number: ";
     std::cout << phone_book->contact[i].phone_number << std::endl;
+    std::cout << "Darkest Secret: ";
     std::cout << phone_book->contact[i].darkest_secret << std::endl;
 }
 
@@ -65,7 +70,7 @@ int main(void)
     while (1)
     {
         std::cout << "\nYou can ADD a contact, SEARCH it or EXIT the CAPS" << std::endl;
-        std::cout << "Insert what you want to do: (please)" << std::endl;
+        std::cout << "\nInsert what you want to do: (please)" << std::endl;
         std::getline(std::cin, command);
         if (command.compare("ADD") == 0)
         {
@@ -79,12 +84,14 @@ int main(void)
         }
         else if (command.compare("SEARCH") == 0)
         {
+            std::cout << "\nSEARCHING IN CAPS:\n" << std::endl;
+
             display_search(&phone_book, round, index);
             while (1)
             {
                 if (round == 0 && index == 0)
                 {
-                    std::cout << "\n --> NOTHING TO SEARCH" << std::endl;
+                    std::cout << " --> NOTHING TO SEARCH" << std::endl;
                     break ;
                 }
                 std::cout << "Insert the index of the contact you want to check: (please)" << std::endl;

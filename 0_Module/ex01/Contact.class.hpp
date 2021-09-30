@@ -27,7 +27,15 @@ class Contact {
             display_first_name.append(".");
         }
         else
+        {
+            unsigned long size = 10;
             display_first_name = first_name;
+            while (size > first_name.length())
+            {
+                display_first_name.append(" ");
+                size--;
+            }
+        }
     }
 
     void    get_LastName()
@@ -39,7 +47,15 @@ class Contact {
             display_last_name.append(".");
         }
         else
+        {
+            unsigned long size = 10;
             display_last_name = last_name;
+            while (size > last_name.length())
+            {
+                display_last_name.append(" ");
+                size--;
+            }
+        }
     }
 
     void    get_NickName()
@@ -51,7 +67,15 @@ class Contact {
             display_nickname.append(".");
         }
         else
+        {
+            unsigned long size = 10;
             display_nickname = nickname;
+            while (size > nickname.length())
+            {
+                display_nickname.append(" ");
+                size--;
+            }
+        }
     }
 
     void    get_PhoneNumber()
