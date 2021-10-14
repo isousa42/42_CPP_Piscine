@@ -7,17 +7,24 @@
 
 void    add_contact(PhoneBook *phone_book, int i)
 {
+    std::string set;
+
     std::cout << "\nCREATING A NEW CONTACT:\n" << std::endl;
     std::cout << "Insert First Name: ";
-    phone_book->contact[i].get_FirstName();
+    std::getline(std::cin, set);
+    phone_book->set_contact(set, 0, i);
     std::cout << "Insert Last Name: ";
-    phone_book->contact[i].get_LastName();
+    std::getline(std::cin, set);
+    phone_book->set_contact(set, 1, i);
     std::cout << "Insert Nickame: ";
-    phone_book->contact[i].get_NickName();
+    std::getline(std::cin, set);
+    phone_book->set_contact(set, 2, i);
     std::cout << "Insert Phone Number: ";
-    phone_book->contact[i].get_PhoneNumber();
+    std::getline(std::cin, set);
+    phone_book->set_contact(set, 3, i);
     std::cout << "Insert Darkest Secret: ";
-    phone_book->contact[i].get_DarkestSecret();
+    std::getline(std::cin, set);
+    phone_book->set_contact(set, 4, i);
 }
 
 void    display_search(PhoneBook *phone_book, int round, int index)
@@ -32,9 +39,9 @@ void    display_search(PhoneBook *phone_book, int round, int index)
         stop = 8;
     while (i < stop)
     {
-        std::cout << i + 1 << " | " << phone_book->contact[i].display_first_name << " | ";
-        std::cout << phone_book->contact[i].display_last_name << " | ";
-        std::cout << phone_book->contact[i].display_nickname << std::endl;
+        std::cout << i + 1 << " | " << phone_book->get_contact(5, i) << " | ";
+        std::cout << phone_book->get_contact(6, i) << " | ";
+        std::cout << phone_book->get_contact(7, i) << std::endl;
         i++;
     }
 }
@@ -43,15 +50,15 @@ void    display_contact(PhoneBook *phone_book, int i)
 {
     std::cout << "\nCONTACT NUMBER " << i + 1 << ":\n" << std::endl;
     std::cout << "First Name: ";
-    std::cout << phone_book->contact[i].first_name << std::endl;
+    std::cout << phone_book->get_contact(0, i) << std::endl;
     std::cout << "Last Name: ";
-    std::cout << phone_book->contact[i].last_name << std::endl;
+    std::cout << phone_book->get_contact(1, i) << std::endl;
     std::cout << "Nickame: ";
-    std::cout << phone_book->contact[i].nickname << std::endl;
+    std::cout << phone_book->get_contact(2, i) << std::endl;
     std::cout << "Phone Number: ";
-    std::cout << phone_book->contact[i].phone_number << std::endl;
+    std::cout << phone_book->get_contact(3, i) << std::endl;
     std::cout << "Darkest Secret: ";
-    std::cout << phone_book->contact[i].darkest_secret << std::endl;
+    std::cout << phone_book->get_contact(4, i) << std::endl;
 }
 
 int main(void)

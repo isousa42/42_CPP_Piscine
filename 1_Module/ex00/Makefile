@@ -2,8 +2,8 @@ CC = clang++
 FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-NAME = caps
-SRCS = caps_main.cpp PhoneBook.class.cpp Contact.class.cpp
+NAME = brainz
+SRCS = main.cpp Zombie.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)

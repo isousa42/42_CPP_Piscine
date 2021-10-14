@@ -5,10 +5,17 @@
 
 class PhoneBook {
 
+    private:
+
+        Contact _contact[8];
+    
     public:
 
-    Contact contact[8];
+        PhoneBook();
+        ~PhoneBook();
 
+        void                set_contact(std::string set, int control, int index);
+        std::string const   get_contact(int control, int index) const;
 };
 
 #endif
