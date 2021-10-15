@@ -12,7 +12,7 @@ void    ft_toupper(char **argv)
         while(argv[i][j])
         {
             if (argv[i][j] >= 97 && argv[i][j] <= 122)
-                argv[i][j] -= 32;
+                argv[i][j] = toupper(argv[i][j]);
             j++;
         }
         i++;
@@ -32,6 +32,7 @@ int main(int argc, char **argv)
         while (argv[i])
         {
             std::cout << argv[i];
+            std::cout << ' ';
             i++;
         }
         std::cout << std::endl;

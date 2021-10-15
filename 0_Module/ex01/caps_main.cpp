@@ -70,7 +70,6 @@ int main(void)
     int round = 0;
     int search_index;
     int control = 0;
-  
 
     index = 0;
     std::cout << "Welcome to CAPS: Crappy Awesome Phone Software" << std::endl;

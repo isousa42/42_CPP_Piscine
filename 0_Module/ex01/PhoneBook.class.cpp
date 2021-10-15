@@ -10,7 +10,7 @@ PhoneBook::~PhoneBook(void)
     return ;
 }
 
-void                PhoneBook::set_contact(std::string set, int control, int index)
+void    PhoneBook::set_contact(std::string set, int control, int index)
 {
     if (control == 0)
         _contact[index].set_FirstName(set);
