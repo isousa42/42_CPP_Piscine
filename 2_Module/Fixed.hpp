@@ -14,12 +14,11 @@ class Fixed{
 
         Fixed();
         ~Fixed();
-        
+        Fixed(const Fixed &fixed);
+        Fixed &operator= (const Fixed &copy);
 
-
+        int getRawBits(void);
+        void setRawBits(int const raw);
 };
-
-
-
 
 #endif

@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 NAME = brainz
-SRCS = main.cpp Zombie.cpp
+SRCS = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
