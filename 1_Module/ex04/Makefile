@@ -2,8 +2,8 @@ CC = clang++
 FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-NAME = weapons
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+NAME = replace
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
