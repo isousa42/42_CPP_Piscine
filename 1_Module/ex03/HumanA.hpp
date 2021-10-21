@@ -2,7 +2,7 @@
 # define HUMANA_HPP
 
 # include "iostream"
-#   include "Weapon.hpp"
+# include "Weapon.hpp"
 
 class HumanA{
 
@@ -14,7 +14,7 @@ class HumanA{
     public:
         HumanA(std::string name, Weapon &weapon);
         ~HumanA();
-        v
+        void attack(void);
 
 };
 
