@@ -10,7 +10,10 @@ int main(int argc, char **argv)
     std::fstream new_file;
     std::string str;
     std::string name_file;
-    char c;
+
+    std::string test;
+
+    //char c;
 
     if (argc != 4)
     {
@@ -30,41 +33,77 @@ int main(int argc, char **argv)
         return (1);
     }
     new_file.open(name_file, std::ios::out | std::ios::in | std::ios::trunc);
+    if (!new_file)
     {
         std::cout << "ERROR CREATING FILE" << std::endl;
         return (1);
     }
-    while (file.get(c))
+    int pos = 0;
+    int save_pos = 0;
+    std::string new_str;
+    while (std::getline(file, test))
     {
-        std::cout << c;
-        if (c == ' ' || c == '\n')
+            std::cout << "pos = " << pos << std::endl;
+
+        while ((pos = test.find(s1, save_pos)) >= 0)
         {
-            if (str.compare(s1) == 0)
-            {
 
-                new_file << s2;
-                new_file << c;
-                str.clear();
-            }
-            else
-            {
-                new_file << str;
-                new_file << c;
-                str.clear();
+            std::cout << "pos = " << pos << std::endl; // pos = 9
+            std::cout << "save pos = " << save_pos << std::endl; // pos = 9
 
+            if (pos >= 0 && pos < (int)test.length())
+            {
+                new_str.append(test.substr(save_pos, pos - save_pos));
+                new_str.append(s2);
+                save_pos = pos + s1.length();
             }
         }
-        else
-            str.append(1, c);
-    }
-    if (str.compare(s1) == 0)
-    {
+        if (new_str.empty())
+                new_str = test;
 
-        new_file << s2;
-        str.clear();
+
+        save_pos = 0;
+        std::cout << "str = " << new_str << std::endl;
+        pos = 0;
+        std::cout << "test = " << test << std::endl;
+        new_str.erase();
     }
-    else
-        new_file << str;
+
+
+
+
+
+
+    // {
+    //     std::cout << c;
+    //     if (c == ' ' || c == '\n')
+    //     {
+    //         if (str.compare(s1) == 0)
+    //         {
+
+    //             new_file << s2;
+    //             new_file << c;
+    //             str.clear();
+    //         }
+    //         else
+    //         {
+    //             new_file << str;
+    //             new_file << c;
+    //             str.clear();
+
+    //         }
+    //     }
+    //     else
+    //         str.append(1, c);
+    // }
+    // if (str.compare(s1) == 0)
+    // {
+
+    //     new_file << s2;
+    //     str.clear();
+    // }
+    // else
+    //     new_file << str;
     new_file.close();
     file.close();
 
