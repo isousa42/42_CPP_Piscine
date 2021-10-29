@@ -11,18 +11,18 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &fixed)
+Fixed::Fixed(Fixed &fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
 
     *this = fixed;
 }
 
-Fixed &Fixed::operator= (const Fixed &copy)
+Fixed &Fixed::operator= (Fixed &copy)
 {
     std::cout << "Assignation Operator called" << std::endl;
 
-    _fixed_point = copy._fixed_point;
+    _fixed_point = copy.getRawBits();
     return (*this);
 }
 
