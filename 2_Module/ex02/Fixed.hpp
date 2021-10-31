@@ -33,6 +33,16 @@ class Fixed{
         Fixed operator* (Fixed const &copy);
         Fixed operator/ (Fixed const &copy);
 
+        Fixed operator++ (void);
+        Fixed operator++ (int nothing);
+        Fixed operator-- (void);
+        Fixed operator--(int nothing);
+
+        static Fixed &max(Fixed &first, Fixed &second);
+        static Fixed const &max(Fixed const &first, Fixed const &second);
+        static Fixed &min(Fixed &first, Fixed &second);
+        static Fixed const &min(Fixed const &first, Fixed const &second);
+
 
         int getRawBits(void) const;
         void setRawBits(int const raw);
