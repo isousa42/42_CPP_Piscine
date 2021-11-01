@@ -18,7 +18,6 @@ class ScavTrap : virtual public ClapTrap{
         std::string &getnameofClap(void);
 
         int getenergypoints(void);
-        void call_attack(std::string &target);
 
 };
 

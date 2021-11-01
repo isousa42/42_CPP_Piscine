@@ -27,6 +27,7 @@ int main(void)
     DiamondTrap diamond("Demon");
 
     diamond.getnameofClap();
+    diamond.attack("Other");
 
     return (0);
 }

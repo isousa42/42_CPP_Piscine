@@ -2,6 +2,10 @@
 
 DiamondTrap::DiamondTrap()
 {
+    _hit_points = this->gethitpoints();
+    _energy_points = this->getenergypoints();
+    _attack_damage = this->gethitpoints();
+    
     std::cout << "Default Constructor called for DiamondTrap: " << std::endl;
     return ;
 }
@@ -21,11 +25,5 @@ DiamondTrap::DiamondTrap(std::string name)
 DiamondTrap::~DiamondTrap()
 {
     std::cout << "Destructor called for DiamondTrap: " << _name << std::endl;
-    return ;
-}
-
-void DiamondTrap::attack(std::string const &target)
-{
-    this->call_attack(target);
     return ;
 }

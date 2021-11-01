@@ -19,7 +19,6 @@ class DiamondTrap : public FragTrap, public ScavTrap{
         DiamondTrap(std::string name);
         ~DiamondTrap();
 
-        void attack(std::string const &target);
         void guardGate();
 
 

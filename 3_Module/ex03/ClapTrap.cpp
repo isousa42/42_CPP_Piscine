@@ -2,6 +2,9 @@
 
 ClapTrap::ClapTrap()
 {
+    _hit_points = 10;
+    _energy_points = 10;
+    _attack_damage = 0;
     std::cout << "Default Constructor called for ClapTrap: " << std::endl;
     return ;
 }

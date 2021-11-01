@@ -2,6 +2,9 @@
 
 ScavTrap::ScavTrap()
 {
+    _hit_points = 100;
+    _energy_points = 50;
+    _attack_damage = 20;
     std::cout << "Default Constructor called for ScavTrap: " << std::endl;
     return ;
 }
@@ -46,10 +49,4 @@ std::string &ScavTrap::getnameofClap(void)
 int ScavTrap::getenergypoints(void)
 {
     return (_energy_points);
-}
-
-void call_attack(std::sting &target)
-{
-    attack(target);
-    return ;
 }
