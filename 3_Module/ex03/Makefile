@@ -1,5 +1,5 @@
 CC = clang++
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 RM = rm -f
 
 NAME = ClapTrap
