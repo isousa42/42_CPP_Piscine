@@ -11,3 +11,9 @@ Cat::~Cat()
 {
     std::cout << "Destructor called for Cat: " << _name << std::endl;
 }
+
+void Cat::makeSound(void) const
+{
+    std::cout << "MIAUUUUU MIAUUUUU MIAUUUUU" << std::endl;
+    return ;
+}

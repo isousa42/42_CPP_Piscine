@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 NAME = animal
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
