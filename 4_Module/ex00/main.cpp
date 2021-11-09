@@ -12,6 +12,9 @@ int main()
     std::cout << "name of j = " << j->getType() << std::endl;
     std::cout << "name of i = " << i->getType() << std::endl;
 
+    j->makeSound();
+    i->makeSound();
+    meta->makeSound();
 
     delete j;
     delete i;
