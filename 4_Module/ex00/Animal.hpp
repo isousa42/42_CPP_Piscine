@@ -5,20 +5,17 @@
 
 class Animal{
 
-    private:
+    protected:
 
-        std::string *_name;
+        std::string _name;
 
     public:
 
         Animal();
-        Animal(std::string &type);
+        Animal(std::string type);
         ~Animal();
 
-        void setType(std::string &type);
         std::string const getType(void) const;
-        void makeSound();
-
 };
 
 #endif

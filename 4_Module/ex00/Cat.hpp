@@ -5,15 +5,9 @@
 # include "Animal.hpp"
 
 class Cat : public Animal{
-
-    private:
-
-        std::string _type;
-
+    
     public:
-
         Cat();
-        Cat(std::string type);
         ~Cat();
 
 };
