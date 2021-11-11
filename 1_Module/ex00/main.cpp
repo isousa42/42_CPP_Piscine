@@ -2,12 +2,14 @@
 
 int main(void)
 {
-    Zombie *zombie;
+    Zombie zombie("Marco");
+    Zombie  *other_zombie;
 
-    zombie = Zombie::newZombie("Ines");
-    zombie->announce();
-    Zombie::randomChump("amelia");
+    zombie.announce();
+    other_zombie = Zombie::newZombie("Samora");
+    other_zombie->announce();
+    Zombie::randomChump("Beleza");
 
-    delete zombie;
+    delete other_zombie;
     return (0);   
 }

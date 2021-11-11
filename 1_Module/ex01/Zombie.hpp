@@ -15,9 +15,9 @@ class Zombie{
         Zombie(std::string name);
         ~Zombie();
 
-        void    set_name(std::string name);
-        void    announce(void);
-        static Zombie *zombieHorde(int N, std::string name);
+        void            set_name(std::string name);
+        void            announce(void);
+        static Zombie   *zombieHorde(int N, std::string name);
 
 };
 

@@ -2,7 +2,7 @@
 
 Zombie* Zombie::zombieHorde( int N, std::string name )
 {
-    Zombie *first_zombie = new Zombie[N];
+    Zombie  *first_zombie = new Zombie[N];
 
     int i = 0;
     while (i < N)

@@ -1,8 +1,8 @@
 #include "HumanB.hpp"
 
-HumanB::~HumanB()
+HumanB::HumanB()
 {
-    std::cout << "Destrutor called for HumanB" << std::endl;
+    std::cout << "Default Construtor called for HumanB" << std::endl;
     return ;
 }
 
@@ -11,6 +11,12 @@ HumanB::HumanB(std::string name)
     std::cout << "Construtor called for HumanB" << std::endl;
     _weapon = NULL;
     _name = name;
+    return ;
+}
+
+HumanB::~HumanB()
+{
+    std::cout << "Destrutor called for HumanB" << std::endl;
     return ;
 }
 
