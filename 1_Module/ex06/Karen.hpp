@@ -5,15 +5,6 @@
 
 class Karen{
 
-    public:
-
-        Karen();
-        ~Karen();
-        typedef void (Karen::*func)(void);
-        func funcs[4];
-
-        void complain(std::string level);
-
     private:
 
         void debug(void);
@@ -21,7 +12,15 @@ class Karen{
         void warning(void);
         void error(void);
 
+    public:
 
+        Karen();
+        ~Karen();
+
+        typedef void (Karen::*func)(void);
+        func funcs[4];
+
+        void complain(std::string level);
 };
 
 #endif

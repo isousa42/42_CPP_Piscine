@@ -3,16 +3,12 @@
 
 # include <iostream>
 
+/*
+//  typedef associates a name to a type of data.
+//  ex: typedef int integer --> declaring integer n is the same as int n
+*/
+
 class Karen{
-
-    public:
-
-        Karen();
-        ~Karen();
-        typedef void (Karen::*func)(void);
-        func funcs[4];
-
-        void complain(std::string level);
 
     private:
 
@@ -21,7 +17,15 @@ class Karen{
         void warning(void);
         void error(void);
 
+    public:
 
+        Karen();
+        ~Karen();
+
+        typedef void (Karen::*func)(void);
+        func funcs[4];
+
+        void complain(std::string level);
 };
 
 #endif
