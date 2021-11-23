@@ -11,5 +11,5 @@ int main(void)
     Zombie::randomChump("Beleza");
 
     delete other_zombie;
-    return (0);   
+    return (0);
 }

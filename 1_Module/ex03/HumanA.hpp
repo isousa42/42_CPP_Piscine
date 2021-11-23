@@ -11,7 +11,7 @@ class HumanA{
         Weapon      &_weapon;
         std::string _type;
         std::string _name;
-    
+
     public:
 
         HumanA(std::string name, Weapon &weapon);

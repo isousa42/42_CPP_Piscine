@@ -1,5 +1,9 @@
 #include "Fixed.hpp"
 
+// 1 = 00000001 
+// 1 << 8 = 10000000
+// nbr * (1 << _frac_bits) = width of the number representation
+
 Fixed::Fixed()
 {
     _fixed_point = 0;
@@ -12,6 +16,7 @@ Fixed::Fixed(const int nbr)
     std::cout << "Default constructor called" << std::endl;
 }
 
+//roundf because _fixed_point 
 Fixed::Fixed(const float nbr)
 {
     _fixed_point = roundf(nbr * (1 << _frac_bits));

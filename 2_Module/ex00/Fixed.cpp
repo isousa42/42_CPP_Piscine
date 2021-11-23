@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 
+// Default construtor initializes the _fixed_point value to 0 (as in the subject)
 Fixed::Fixed()
 {
     _fixed_point = 0;
@@ -11,6 +12,7 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
+// Copy construtor, used to initialize a new object as a copy to other one
 Fixed::Fixed(Fixed &fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
@@ -18,6 +20,8 @@ Fixed::Fixed(Fixed &fixed)
     *this = fixed;
 }
 
+// Assignation Operator Overload, used to set the _fixed_point of an object
+// equal to other one.
 Fixed &Fixed::operator= (Fixed &copy)
 {
     std::cout << "Assignation Operator called" << std::endl;
