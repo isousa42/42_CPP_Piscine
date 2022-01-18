@@ -4,12 +4,12 @@
 # include <iostream>
 # include "Animal.hpp"
 
-class Cat : public Animal{
+class Cat: protected Animal {
 
     public:
         Cat();
         ~Cat();
-        void makeSound(void) const;
+        void makeSound();
 };
 
 #endif
