@@ -1,0 +1,36 @@
+#include "Animal.hpp"
+
+Animal::Animal()
+{
+    std::cout << "Default Constructor called for Animal" << std::endl;
+    return ;
+}
+
+Animal::Animal(const Animal &animal)
+{
+    std::cout << "Default Constructor called for Animal" << std::endl;
+    *this = animal;
+    return ;
+}
+
+Animal& Animal::operator=(const Animal &animal)
+{
+    (void)animal;
+    return (*this);
+}
+
+Animal::~Animal()
+{
+    std::cout << "Destructor called for Animal" << std::endl;
+    return ;
+}
+
+void Animal::makeSound() const
+{
+    return ;
+}
+
+std::string Animal::getType() const
+{
+    return (_type);
+}
