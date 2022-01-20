@@ -41,6 +41,5 @@ int main(void)
 
     std::cout << bur << std::endl;
     
-    
     return (0);
 }
