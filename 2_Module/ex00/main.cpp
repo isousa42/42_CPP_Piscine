@@ -2,11 +2,8 @@
 
 /*
 ** Fixed Point Arithmetic are faster than floating points.
-** It is used when performance is mor important than precison.
-** Most modern computer support floating point number but not fixe point number.
-**
-**
-**
+** It is used when performance is more important than precison.
+** Most modern computer support floating point number but not fixed point number.
 */
 
 int main( void ) 
@@ -19,6 +16,13 @@ int main( void )
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;
     std::cout << c.getRawBits() << std::endl;
+
+    
+    c.setRawBits(5);
+    std::cout << c.getRawBits() << std::endl;
+
+
+
 
     return 0;
 }

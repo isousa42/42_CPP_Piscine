@@ -10,13 +10,13 @@ Fixed::Fixed()
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
+    return ;
 }
 
 // Copy construtor, used to initialize a new object as a copy to other one
 Fixed::Fixed(Fixed &fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
-
     *this = fixed;
 }
 
@@ -30,7 +30,8 @@ Fixed &Fixed::operator= (Fixed &copy)
     return (*this);
 }
 
-int Fixed::getRawBits(void)
+// Member function (get and set) to access the private variable of the class
+int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
 
