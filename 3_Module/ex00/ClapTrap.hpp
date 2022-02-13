@@ -15,8 +15,15 @@ class ClapTrap{
     public:
 
         ClapTrap();
-        ClapTrap(std::string name);
         ~ClapTrap();
+        ClapTrap(ClapTrap &clap);
+        ClapTrap &operator= (ClapTrap &copy);
+
+        ClapTrap(std::string name);
+
+        int getFixedPoint(void) const;
+        void setFixedPoint(int const b_point);
+
         void attack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

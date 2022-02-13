@@ -1,9 +1,34 @@
 #include "ClapTrap.hpp"
 
+// CONSTRUCTORS AND DESTRUCTORS
+
 ClapTrap::ClapTrap()
 {
     std::cout << "Default Constructor called for ClapTrap: " << std::endl;
     return ;
+}
+
+ClapTrap::~ClapTrap()
+{
+    std::cout << "Destructor called for ClapTrap: " << _name << std::endl;
+    return ;
+}
+
+ClapTrap::ClapTrap(ClapTrap &clap)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = clap;
+}
+
+ClapTrap &ClapTrap::operator= (ClapTrap &copy)
+{
+    std::cout << "Assignation Operator called" << std::endl;
+
+    _name = copy._name;
+    _hit_points = copy._hit_points;
+    _energy_points = copy._energy_points;
+    _attack_damage = copy._attack_damage;
+    return (*this);
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -15,11 +40,12 @@ ClapTrap::ClapTrap(std::string name)
     std::cout << "Constructor called for ClapTrap: " << _name << std::endl;
 }
 
-ClapTrap::~ClapTrap()
-{
-    std::cout << "Destructor called for ClapTrap: " << _name << std::endl;
-    return ;
-}
+// GETS AND SETS
+
+
+
+
+// OTHER FUNTIONS
 
 void ClapTrap::attack(std::string const &target)
 {
