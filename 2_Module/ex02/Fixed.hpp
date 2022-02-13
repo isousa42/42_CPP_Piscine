@@ -44,8 +44,8 @@ class Fixed{
         static Fixed const &min(Fixed const &first, Fixed const &second);
 
 
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
+        int getFixedPoint(void) const;
+        void setFixedPoint(int const nbr);
         float toFloat(void) const;
         int toInt(void) const;
 };

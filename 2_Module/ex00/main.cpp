@@ -13,13 +13,13 @@ int main( void )
     Fixed c;
 
     c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+    std::cout << a.getFixedPoint() << std::endl;
+    std::cout << b.getFixedPoint() << std::endl;
+    std::cout << c.getFixedPoint() << std::endl;
 
     
-    c.setRawBits(5);
-    std::cout << c.getRawBits() << std::endl;
+    c.setFixedPoint(5);
+    std::cout << c.getFixedPoint() << std::endl;
 
 
 

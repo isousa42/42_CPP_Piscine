@@ -18,11 +18,11 @@ Fixed::Fixed(const float nbr)
 
 Fixed::~Fixed()
 {
+    return ;
 }
 
 Fixed::Fixed(Fixed const &fixed)
 {
-
     *this = fixed;
 }
 
@@ -33,17 +33,13 @@ Fixed::Fixed(Fixed const &fixed)
 
 Fixed &Fixed::operator= (Fixed const &copy)
 {
-
-
-    _fixed_point = copy.getRawBits();
+    _fixed_point = copy.getFixedPoint();
     return (*this);
 }
 
 bool Fixed::operator> (Fixed const &copy)
 {
-
-
-    if (_fixed_point > copy.getRawBits())
+    if (_fixed_point > copy.getFixedPoint())
         return (true);
     else
         return (false);
@@ -51,9 +47,7 @@ bool Fixed::operator> (Fixed const &copy)
 
 bool Fixed::operator< (Fixed const &copy)
 {
-
-
-    if (_fixed_point < copy.getRawBits())
+    if (_fixed_point < copy.getFixedPoint())
         return (true);
     else
         return (false);
@@ -61,9 +55,7 @@ bool Fixed::operator< (Fixed const &copy)
 
 bool Fixed::operator>= (Fixed const &copy)
 {
-
-
-    if (_fixed_point >= copy.getRawBits())
+    if (_fixed_point >= copy.getFixedPoint())
         return (true);
     else
         return (false);
@@ -71,9 +63,7 @@ bool Fixed::operator>= (Fixed const &copy)
 
 bool Fixed::operator<= (Fixed const &copy)
 {
-
-
-    if (_fixed_point <= copy.getRawBits())
+    if (_fixed_point <= copy.getFixedPoint())
         return (true);
     else
         return (false);
@@ -81,9 +71,7 @@ bool Fixed::operator<= (Fixed const &copy)
 
 bool Fixed::operator== (Fixed const &copy)
 {
-
-
-    if (_fixed_point == copy.getRawBits())
+    if (_fixed_point == copy.getFixedPoint())
         return (true);
     else
         return (false);
@@ -91,9 +79,7 @@ bool Fixed::operator== (Fixed const &copy)
 
 bool Fixed::operator!= (Fixed const &copy)
 {
-
-
-    if (_fixed_point != copy.getRawBits())
+    if (_fixed_point != copy.getFixedPoint())
         return (true);
     else
         return (false);
@@ -101,29 +87,21 @@ bool Fixed::operator!= (Fixed const &copy)
 
 Fixed Fixed::operator+ (Fixed const &copy)
 {
-
-
     return (Fixed(this->toFloat() + copy.toFloat()));
 }
 
 Fixed Fixed::operator- (Fixed const &copy)
 {
-
-
     return (Fixed(this->toFloat() - copy.toFloat()));
 }
 
 Fixed Fixed::operator* (Fixed const &copy)
 {
-
-
     return (Fixed(this->toFloat() * copy.toFloat()));
 }
 
 Fixed Fixed::operator/ (Fixed const &copy)
 {
-
-
     return (Fixed(this->toFloat() / copy.toFloat()));
 }
 
@@ -132,8 +110,6 @@ Fixed Fixed::operator/ (Fixed const &copy)
 // I want the value to be updated before being used.
 Fixed Fixed::operator++ (void)
 {
-
-
     _fixed_point++;
     return (*this);
 }
@@ -153,7 +129,6 @@ Fixed Fixed::operator++ (int nothing)
 // I want the value to be updated before being used.
 Fixed Fixed::operator-- (void)
 {
-
     _fixed_point--;
     return (*this);
 }
@@ -163,7 +138,6 @@ Fixed Fixed::operator-- (void)
 // When using --(*this) I'm calling the operator of the pre-increment!
 Fixed Fixed::operator-- (int nothing)
 {
-
     (void)nothing;
     Fixed temp(*this);
     --(*this);
@@ -176,7 +150,7 @@ Fixed Fixed::operator-- (int nothing)
 
 Fixed &Fixed::max(Fixed &first, Fixed &second)
 {
-    if (first.getRawBits() < second.getRawBits())
+    if (first.getFixedPoint() < second.getFixedPoint())
         return (second);
     else
         return (first);
@@ -184,7 +158,7 @@ Fixed &Fixed::max(Fixed &first, Fixed &second)
 
 Fixed const &Fixed::max(Fixed const &first, Fixed const &second)
 {
-    if (first.getRawBits() < second.getRawBits())
+    if (first.getFixedPoint() < second.getFixedPoint())
         return (second);
     else
         return (first);
@@ -192,7 +166,7 @@ Fixed const &Fixed::max(Fixed const &first, Fixed const &second)
 
 Fixed &Fixed::min(Fixed &first, Fixed &second)
 {
-    if (first.getRawBits() > second.getRawBits())
+    if (first.getFixedPoint() > second.getFixedPoint())
         return (second);
     else
         return (first);
@@ -200,7 +174,7 @@ Fixed &Fixed::min(Fixed &first, Fixed &second)
 
 Fixed const &Fixed::min(Fixed const &first, Fixed const &second)
 {
-    if (first.getRawBits() > second.getRawBits())
+    if (first.getFixedPoint() > second.getFixedPoint())
         return (second);
     else
         return (first);
@@ -214,15 +188,15 @@ Fixed const &Fixed::min(Fixed const &first, Fixed const &second)
 
 
 
-int Fixed::getRawBits(void) const
+int Fixed::getFixedPoint(void) const
 {
 
     return (_fixed_point);
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setFixedPoint(int const nbr)
 {
-    _fixed_point = raw;
+    _fixed_point = nbr;
 }
 
 float Fixed::toFloat(void) const

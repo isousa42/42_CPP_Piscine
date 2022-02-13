@@ -2,25 +2,25 @@
 
 // 1 = 00000001 
 // 1 << 8 = 10000000
-// nbr * (1 << _frac_bits) = width of the number representation
+
 
 Fixed::Fixed()
 {
+    std::cout << "Default constructor called " << std::endl;
     _fixed_point = 0;
-    std::cout << "Default constructor called" << std::endl;
-}
+} 
 
 Fixed::Fixed(const int nbr)
 {
+    std::cout << "Int constructor called" << std::endl;
     _fixed_point = nbr * (1 << _frac_bits);
-    std::cout << "Default constructor called" << std::endl;
 }
 
-//roundf because _fixed_point 
+//roundf because fixed point numbers are not as precise as the floating point numbers
 Fixed::Fixed(const float nbr)
 {
     _fixed_point = roundf(nbr * (1 << _frac_bits));
-    std::cout << "Default constructor called"<<this->getRawBits()<< std::endl;
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
@@ -31,7 +31,6 @@ Fixed::~Fixed()
 Fixed::Fixed(Fixed const &fixed)
 {
     std::cout << "Copy constructor called" << std::endl;
-
     *this = fixed;
 }
 
@@ -39,21 +38,18 @@ Fixed &Fixed::operator= (Fixed const &copy)
 {
     std::cout << "Assignation Operator called" << std::endl;
 
-    _fixed_point = copy.getRawBits();
+    _fixed_point = copy.getFixedPoint();
     return (*this);
 }
 
-int Fixed::getRawBits(void) const
+int Fixed::getFixedPoint(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
-
     return (_fixed_point);
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setFixedPoint(int const nbr)
 {
-    std::cout << "setRawBits member function called" << std::endl;
-    _fixed_point = raw;
+    _fixed_point = nbr;
 }
 
 float Fixed::toFloat(void) const

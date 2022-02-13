@@ -22,8 +22,8 @@ class Fixed{
 
         Fixed &operator= (Fixed const &copy);
 
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
+        int getFixedPoint(void) const;
+        void setFixedPoint(int const nbr);
         float toFloat(void) const;
         int toInt(void) const;
 };

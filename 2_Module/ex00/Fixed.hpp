@@ -4,10 +4,10 @@
 #include <iostream>
 
 /*
-** the _frac_bits is the width of the number representation
-** the _fixed_point is the binary point position of the number
-** imagine number 10101.010 has 8 _frac_bits and 3 _fixed_point
-** It is all about bit shifting the number until the number of the fixed_point.
+** the _frac_bits is the width of the number representation in fractal part of the number (after binary point)
+** the _fixed_point is the bits of the number (binary number)
+** imagine number 10101.010 has 8 _frac_bits and the binary point is at the 3rd position to the left
+** It is all about bit shifting the number until the number of the binary point.
 **
 ** Const function members can be called to any object, const and non-const. Non-Const funtions
 ** can only be called to non-const objects. Making as many const
@@ -29,8 +29,8 @@ class Fixed{
         Fixed(Fixed &fixed);
         Fixed &operator= (Fixed &copy);
 
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
+        int getFixedPoint(void) const;
+        void setFixedPoint(int const b_point);
 };
 
 #endif

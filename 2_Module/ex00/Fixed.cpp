@@ -26,21 +26,21 @@ Fixed &Fixed::operator= (Fixed &copy)
 {
     std::cout << "Assignation Operator called" << std::endl;
 
-    _fixed_point = copy.getRawBits();
+    _fixed_point = copy.getFixedPoint();
     return (*this);
 }
 
 // Member function (get and set) to access the private variable of the class
-int Fixed::getRawBits(void) const
+int Fixed::getFixedPoint(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    std::cout << "getFixedPoint member function called" << std::endl;
 
     return (_fixed_point);
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setFixedPoint(int const b_point)
 {
-    std::cout << "setRawBits member function called" << std::endl;
-    _fixed_point = raw;
+    std::cout << "setFixedPoint member function called" << std::endl;
+    _fixed_point = b_point;
 }
 
