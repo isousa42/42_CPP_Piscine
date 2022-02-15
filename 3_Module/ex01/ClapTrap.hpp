@@ -3,6 +3,9 @@
 
 # include <iostream>
 
+// The atributes in this Class had to be changed to protected instead of private
+// Private atributes can NOT be accessed by the "mother-class". If ScravTrap is inheritated from ClapTrap, the atributes must be protected, so ScravTrap can access. Being protected, it still can not be accessed outside of the class.
+
 class ClapTrap{
 
     protected:
@@ -15,8 +18,11 @@ class ClapTrap{
     public:
 
         ClapTrap();
-        ClapTrap(std::string name);
         ~ClapTrap();
+        ClapTrap(ClapTrap &clap);
+        ClapTrap &operator= (ClapTrap &copy);
+
+        ClapTrap(std::string name);
 
         void attack(std::string const &target);
         void takeDamage(unsigned int amount);

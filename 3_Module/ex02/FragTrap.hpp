@@ -4,13 +4,16 @@
 # include <iostream>
 # include "ScavTrap.hpp"
 
-class FragTrap : public ScavTrap{
+class FragTrap : public ClapTrap{
 
     public:
 
         FragTrap();
-        FragTrap(std::string name);
         ~FragTrap();
+        FragTrap(FragTrap &frag);
+        FragTrap &operator= (FragTrap &copy);
+
+        FragTrap(std::string name);
 
         void attack(std::string const &target);
         void highFivesGuys(void);

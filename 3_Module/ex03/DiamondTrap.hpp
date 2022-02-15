@@ -21,8 +21,6 @@ class DiamondTrap : public FragTrap, public ScavTrap{
 
         void guardGate();
         void whoAmI();
-
-
 };
 
 #endif

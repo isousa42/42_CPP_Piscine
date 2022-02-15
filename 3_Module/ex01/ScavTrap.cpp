@@ -1,9 +1,37 @@
 #include "ScavTrap.hpp"
 
+/*
+** The Member Function attack() is new, as asked in the subject (to have different message from the Clap Trap).
+** In the same way, constructor and destructors have also a different message.
+*/
+
 ScavTrap::ScavTrap()
 {
     std::cout << "Default Constructor called for ScavTrap: " << std::endl;
     return ;
+}
+
+ScavTrap::~ScavTrap()
+{
+    std::cout << "Destructor called for ScavTrap: " << _name << std::endl;
+    return ;
+}
+
+ScavTrap::ScavTrap(ScavTrap &scav)
+{
+    std::cout << "Copy constructor called for ScavTrap" << std::endl;
+    *this = scav;
+}
+
+ScavTrap &ScavTrap::operator= (ScavTrap &copy)
+{
+    std::cout << "Assignation Operator called for ScavTrap" << std::endl;
+
+    _name = copy._name;
+    _hit_points = copy._hit_points;
+    _energy_points = copy._energy_points;
+    _attack_damage = copy._attack_damage;
+    return (*this);
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -15,11 +43,7 @@ ScavTrap::ScavTrap(std::string name)
     std::cout << "Constructor called for ScavTrap: " << _name << std::endl;
 }
 
-ScavTrap::~ScavTrap()
-{
-    std::cout << "Destructor called for ScavTrap: " << _name << std::endl;
-    return ;
-}
+// MEMBER FUNTIONS
 
 void ScavTrap::attack(std::string const &target)
 {

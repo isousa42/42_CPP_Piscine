@@ -9,6 +9,13 @@ ScavTrap::ScavTrap()
     return ;
 }
 
+ScavTrap::~ScavTrap()
+{
+    std::cout << "Destructor called for ScavTrap: " << _name << std::endl;
+    return ;
+}
+
+
 ScavTrap::ScavTrap(std::string name)
 {
     _name = name;
@@ -18,11 +25,26 @@ ScavTrap::ScavTrap(std::string name)
     std::cout << "Constructor called for ScavTrap: " << _name << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+ScavTrap::ScavTrap(ScavTrap &scav)
 {
-    std::cout << "Destructor called for ScavTrap: " << _name << std::endl;
-    return ;
+    std::cout << "Copy constructor called for ScavTrap" << std::endl;
+    *this = scav;
 }
+
+ScavTrap &ScavTrap::operator= (ScavTrap &copy)
+{
+    std::cout << "Assignation Operator called for ScavTrap" << std::endl;
+
+    _name = copy._name;
+    _hit_points = copy._hit_points;
+    _energy_points = copy._energy_points;
+    _attack_damage = copy._attack_damage;
+    return (*this);
+}
+
+
+// MEMBER FUNCTIONS
+
 
 void ScavTrap::attack(std::string const &target)
 {

@@ -21,9 +21,6 @@ class ClapTrap{
 
         ClapTrap(std::string name);
 
-        int getFixedPoint(void) const;
-        void setFixedPoint(int const b_point);
-
         void attack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

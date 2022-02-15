@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-// CONSTRUCTORS AND DESTRUCTORS
+// CONSTRUCTORS AND DESTRUCTORS - Canonical form
 
 ClapTrap::ClapTrap()
 {
@@ -40,12 +40,7 @@ ClapTrap::ClapTrap(std::string name)
     std::cout << "Constructor called for ClapTrap: " << _name << std::endl;
 }
 
-// GETS AND SETS
-
-
-
-
-// OTHER FUNTIONS
+// MEMBER FUNTIONS
 
 void ClapTrap::attack(std::string const &target)
 {

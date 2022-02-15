@@ -6,6 +6,29 @@ FragTrap::FragTrap()
     return ;
 }
 
+FragTrap::~FragTrap()
+{
+    std::cout << "Destructor called for FragTrap: " << _name << std::endl;
+    return ;
+}
+
+FragTrap::FragTrap(FragTrap &frag)
+{
+    std::cout << "Copy constructor called for FragTrap" << std::endl;
+    *this = frag;
+}
+
+FragTrap &FragTrap::operator= (FragTrap &copy)
+{
+    std::cout << "Assignation Operator called for FragTrap" << std::endl;
+
+    _name = copy._name;
+    _hit_points = copy._hit_points;
+    _energy_points = copy._energy_points;
+    _attack_damage = copy._attack_damage;
+    return (*this);
+}
+
 FragTrap::FragTrap(std::string name)
 {
     _name = name;
@@ -15,11 +38,7 @@ FragTrap::FragTrap(std::string name)
     std::cout << "Constructor called for FragTrap: " << _name << std::endl;
 }
 
-FragTrap::~FragTrap()
-{
-    std::cout << "Destructor called for FragTrap: " << _name << std::endl;
-    return ;
-}
+// MEMBER FUNTIONS
 
 void FragTrap::attack(std::string const &target)
 {

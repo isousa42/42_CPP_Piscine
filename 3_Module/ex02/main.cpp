@@ -22,7 +22,6 @@ int main(void)
     fragtrap.attack("Evol");
     fragtrap.takeDamage(20);
     fragtrap.beRepaired(10);
-    fragtrap.guardGate();
     fragtrap.highFivesGuys();
 
     return (0);
