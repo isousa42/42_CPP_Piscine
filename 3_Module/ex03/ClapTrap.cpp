@@ -65,6 +65,23 @@ void ClapTrap::beRepaired(unsigned int amount)
     return ;
 }
 
+// GETS AND SETS
+
+int ClapTrap::getHit(void)
+{
+    return (_hit_points);
+}
+
+int ClapTrap::getEnergy(void)
+{
+    return (_energy_points);
+}
+
+int ClapTrap::getAttack(void)
+{
+    return (_attack_damage);
+}
+
 void ClapTrap::setname(std::string name)
 {
     _name = name;
@@ -74,4 +91,19 @@ void ClapTrap::setname(std::string name)
 std::string &ClapTrap::getname(void)
 {
     return (_name);
+}
+
+void ClapTrap::setHit(int points)
+{
+    this->_hit_points = points;
+}
+
+void ClapTrap::setEnergy(int points)
+{
+    this->_energy_points = points;
+}
+
+void ClapTrap::setAttack(int points)
+{
+    this->_attack_damage = points;
 }

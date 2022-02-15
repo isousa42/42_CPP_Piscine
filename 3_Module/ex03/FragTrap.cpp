@@ -2,15 +2,15 @@
 
 FragTrap::FragTrap()
 {
-    _hit_points = 100;
-    _energy_points = 100;
-    _attack_damage = 30;
+    this->setHit(100);
+    this->setEnergy(100);
+    this->setAttack(30);
     std::cout << "Default Constructor called for FragTrap: " << std::endl;
     return ;
 }
 
 FragTrap::~FragTrap()
-{        void attack(std::string const &target);
+{
     std::cout << "Destructor called for FragTrap: " << _name << std::endl;
     return ;
 }
@@ -18,9 +18,9 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap(std::string name)
 {
     _name = name;
-    _hit_points = 100;
-    _energy_points = 100;
-    _attack_damage = 30;
+    this->setHit(100);
+    this->setEnergy(100);
+    this->setAttack(30);
     std::cout << "Constructor called for FragTrap: " << _name << std::endl;
     return ;
 }

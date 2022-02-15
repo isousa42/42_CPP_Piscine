@@ -19,6 +19,7 @@ class FragTrap : virtual public ClapTrap{
 
         int gethitpoints(void);
         int getattackdamage(void);
+
 };
 
 #endif
