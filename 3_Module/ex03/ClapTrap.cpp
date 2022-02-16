@@ -92,18 +92,3 @@ std::string &ClapTrap::getname(void)
 {
     return (_name);
 }
-
-void ClapTrap::setHit(int points)
-{
-    this->_hit_points = points;
-}
-
-void ClapTrap::setEnergy(int points)
-{
-    this->_energy_points = points;
-}
-
-void ClapTrap::setAttack(int points)
-{
-    this->_attack_damage = points;
-}

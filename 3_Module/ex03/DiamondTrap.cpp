@@ -6,12 +6,16 @@ DiamondTrap::DiamondTrap()
     return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name)
 {
     _name = name;
-    _hit_points = FragTrap::_hit_points;
-    _energy_points = ScavTrap::_energy_points;
-    _attack_damage = FragTrap::_attack_damage;
+
+    ScavTrap temp_scav(name);
+    FragTrap temp_frag(name);
+
+    _hit_points = temp_frag.getHit();
+    _energy_points = temp_scav.getEnergy();
+    _attack_damage = temp_frag.getAttack();
     std::string new_name(name + "_clap_name");
     this->setnameofClap(new_name);
     std::cout << "Constructor called for DiamondTrap: " << this->_name << std::endl;

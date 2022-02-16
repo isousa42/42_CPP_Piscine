@@ -25,9 +25,6 @@ class ScavTrap : virtual public ClapTrap{
         void guardGate();
         void setnameofClap(std::string name);
         std::string &getnameofClap(void);
-
-        int getenergypoints(void);
-
 };
 
 #endif

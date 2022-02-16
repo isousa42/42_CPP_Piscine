@@ -2,9 +2,9 @@
 
 ScavTrap::ScavTrap()
 {
-    this->setHit(100);
-    this->setEnergy(50);
-    this->setAttack(20);
+    _hit_points = 100;
+    _energy_points = 50;
+    _attack_damage = 20;
     std::cout << "Default Constructor called for ScavTrap: " << std::endl;
     return ;
 }
@@ -19,9 +19,9 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(std::string name)
 {
     _name = name;
-    this->setHit(100);
-    this->setEnergy(50);
-    this->setAttack(20);
+    _hit_points = 100;
+    _energy_points = 50;
+    _attack_damage = 20;
     std::cout << "Constructor called for ScavTrap: " << _name << std::endl;
 }
 
@@ -66,11 +66,6 @@ void ScavTrap::setnameofClap(std::string name)
 std::string &ScavTrap::getnameofClap(void)
 {
     return (this->getname());
-}
-
-int ScavTrap::getenergypoints(void)
-{
-    return (_energy_points);
 }
 
 

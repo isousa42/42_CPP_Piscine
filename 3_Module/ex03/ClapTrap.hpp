@@ -30,9 +30,6 @@ class ClapTrap{
         int getHit(void);
         int getEnergy(void);
         int getAttack(void);
-        void setHit(int points);
-        void setEnergy(int points);
-        void setAttack(int points);
 
 };
 

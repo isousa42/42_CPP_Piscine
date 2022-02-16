@@ -32,9 +32,11 @@ int main(void)
 
     DiamondTrap diamond("Rachel");
 
+    std::cout << "--------------------" << std::endl;
+
     std::cout << "Rachel Has " << diamond.getHit() << " hit_points" << std::endl;
     std::cout << "Rachel Has " << diamond.getEnergy() << " energy_points" << std::endl;
-    std::cout << "Rachel Has " << diamond.getattackdamage() << " attack_points" << std::endl;
+    std::cout << "Rachel Has " << diamond.getAttack() << " attack_points" << std::endl;
     std::cout << "--------------------" << std::endl;
 
     diamond.getnameofClap();
@@ -44,7 +46,7 @@ int main(void)
     diamond.highFivesGuys();
     diamond.guardGate();
 
-
+    std::cout << "--------------------" << std::endl;
 
     diamond.whoAmI();
 
