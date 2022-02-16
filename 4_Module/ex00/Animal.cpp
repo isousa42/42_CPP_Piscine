@@ -8,14 +8,15 @@ Animal::Animal()
 
 Animal::Animal(const Animal &animal)
 {
-    std::cout << "Default Constructor called for Animal" << std::endl;
+    std::cout << "Copy Constructor called for Animal" << std::endl;
     *this = animal;
     return ;
 }
 
 Animal& Animal::operator=(const Animal &animal)
 {
-    (void)animal;
+    std::cout << "Assignation Operator called for Animal" << std::endl;
+    _type = animal.getType();
     return (*this);
 }
 
@@ -24,6 +25,8 @@ Animal::~Animal()
     std::cout << "Destructor called for Animal" << std::endl;
     return ;
 }
+
+// MEMBER FUNCTIONS
 
 void Animal::makeSound() const
 {

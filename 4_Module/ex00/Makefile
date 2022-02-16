@@ -1,5 +1,5 @@
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 NAME = Animal
@@ -9,7 +9,7 @@ OBJS = $(SRCS:.cpp=.o)
 all = $(NAME)
 
 $(NAME):
-		$(CC) $(SRCS) $(FLAGS) -o $(NAME)
+		$(CC) $(SRCS) $(CFLAGS) -o $(NAME)
 
 clean:
 		$(RM) $(OBJS)
