@@ -42,7 +42,7 @@ ClapTrap::ClapTrap(std::string name)
 
 void ClapTrap::attack(std::string const &target)
 {
-    std::cout << "ClapTrap " << _name << " attack " << target << ", causing " << _hit_points << " points of damage!" << std::endl;
+    std::cout << "ClapTrap " << _name << " did a petit attack " << target << ", causing " << _hit_points << " points of damage!" << std::endl;
     return ;
 }
 
@@ -58,4 +58,21 @@ void ClapTrap::beRepaired(unsigned int amount)
     _energy_points += amount;
     std::cout << "ClapTrap " << _name << " was repaired " << amount << " points. Has now: " << _energy_points << " energy points." << std::endl;
     return ;
+}
+
+// GETS
+
+int ClapTrap::getHit(void)
+{
+    return (_hit_points);
+}
+
+int ClapTrap::getEnergy(void)
+{
+    return (_energy_points);
+}
+
+int ClapTrap::getAttack(void)
+{
+    return (_attack_damage);
 }

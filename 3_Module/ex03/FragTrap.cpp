@@ -42,10 +42,7 @@ FragTrap &FragTrap::operator= (FragTrap &copy)
     return (*this);
 }
 
-
 // MEMBER FUNTIONS
-
-
 
 void FragTrap::frag_attack(std::string const &target)
 {

@@ -3,8 +3,12 @@
 
 # include <iostream>
 
-// The atributes in this Class had to be changed to protected instead of private
-// Private atributes can NOT be accessed by the "mother-class". If ScravTrap is inheritated from ClapTrap, the atributes must be protected, so ScravTrap can access. Being protected, it still can not be accessed outside of the class.
+/*
+**  The atributes in this Class had to be changed to protected instead of private
+**  Private atributes can NOT be accessed by the derived class. If ScravTrap is inheritated from ClapTrap,
+**  the atributes must be protected, so ScravTrap can access them. 
+**  When protected, they still can not be accessed outside of the class.
+*/
 
 class ClapTrap{
 
@@ -27,6 +31,10 @@ class ClapTrap{
         void attack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+
+        int getHit(void);
+        int getEnergy(void);
+        int getAttack(void);
 };
 
 #endif

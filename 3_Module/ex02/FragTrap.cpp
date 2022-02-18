@@ -42,7 +42,7 @@ FragTrap::FragTrap(std::string name)
 
 void FragTrap::attack(std::string const &target)
 {
-    std::cout << "FragTrap " << _name << " attack " << target << ", causing " << _hit_points << " points of damage!" << std::endl;
+    std::cout << "FragTrap " << _name << " did a massive attack to " << target << ", causing " << _hit_points << " points of damage!" << std::endl;
     return ;
 }
 

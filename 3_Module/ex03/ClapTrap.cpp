@@ -1,5 +1,11 @@
 #include "ClapTrap.hpp"
 
+/*
+** The SET were added to this exercise becuse there's the need to set the name of Clap
+** relatively to the Diamond name. It is only possible if there is a setName function, so
+** derived classes can change the value of its attributes.
+*/ 
+
 ClapTrap::ClapTrap()
 {
     std::cout << "Default Constructor called for ClapTrap: " << std::endl;
@@ -42,8 +48,6 @@ ClapTrap::ClapTrap(std::string name)
 }
 
 // MEMBER FUNCTIONS
-
-
 
 void ClapTrap::attack(std::string const &target)
 {

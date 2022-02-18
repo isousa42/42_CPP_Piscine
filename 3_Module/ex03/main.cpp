@@ -12,8 +12,6 @@ int main(void)
 
     std::cout << "--------------------" << std::endl;
 
-
-
     claptrap.attack("Angel");
     claptrap.takeDamage(20);
     claptrap.beRepaired(10);
@@ -28,7 +26,8 @@ int main(void)
     fragtrap.beRepaired(10);
     fragtrap.highFivesGuys();
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << std::endl;
+    std::cout << "-------DIAMOND-------------" << std::endl;
 
     DiamondTrap diamond("Rachel");
 

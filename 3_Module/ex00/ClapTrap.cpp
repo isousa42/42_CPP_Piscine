@@ -61,3 +61,20 @@ void ClapTrap::beRepaired(unsigned int amount)
     std::cout << "ClapTrap " << _name << " was repaired " << amount << " points. Has now: " << _energy_points << " energy points." << std::endl;
     return ;
 }
+
+// GETS
+
+int ClapTrap::getHit(void)
+{
+    return (_hit_points);
+}
+
+int ClapTrap::getEnergy(void)
+{
+    return (_energy_points);
+}
+
+int ClapTrap::getAttack(void)
+{
+    return (_attack_damage);
+}

@@ -1,5 +1,10 @@
 #include "ScavTrap.hpp"
 
+/*
+** The setName funtion is called by Scav, but it belongs to ClapTrap class. It will set
+** the name of Clapwhen needed.
+*/
+
 ScavTrap::ScavTrap()
 {
     _hit_points = 100;
@@ -14,7 +19,6 @@ ScavTrap::~ScavTrap()
     std::cout << "Destructor called for ScavTrap: " << _name << std::endl;
     return ;
 }
-
 
 ScavTrap::ScavTrap(std::string name)
 {
@@ -42,9 +46,7 @@ ScavTrap &ScavTrap::operator= (ScavTrap &copy)
     return (*this);
 }
 
-
 // MEMBER FUNCTIONS
-
 
 void ScavTrap::attack(std::string const &target)
 {
@@ -56,6 +58,8 @@ void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap " << _name << " HAS ENTERED GATE KEEPER MODE." << std::endl;
 }
+
+// GETS and SETS
 
 void ScavTrap::setnameofClap(std::string name)
 {

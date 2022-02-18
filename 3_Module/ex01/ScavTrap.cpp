@@ -3,11 +3,12 @@
 /*
 ** The Member Function attack() is new, as asked in the subject (to have different message from the Clap Trap).
 ** In the same way, constructor and destructors have also a different message.
+** ScavTrap uses the GETS from the ClapTrap.
 */
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "Default Constructor called for ScavTrap: " << std::endl;
+    std::cout << "Default Constructor called for ScavTrap" << std::endl;
     return ;
 }
 
@@ -47,7 +48,7 @@ ScavTrap::ScavTrap(std::string name)
 
 void ScavTrap::attack(std::string const &target)
 {
-    std::cout << "ScavTrap " << _name << " attack " << target << ", causing " << _hit_points << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << _name << " attacked " << target << ", causing " << _hit_points << " points of damage!" << std::endl;
     return ;
 }
 

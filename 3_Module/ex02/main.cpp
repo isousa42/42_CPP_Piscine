@@ -8,7 +8,19 @@ int main(void)
     ScavTrap scavtrap("Devil");
     FragTrap fragtrap("Love");
 
+    std::cout << "--------------------" << std::endl;
 
+    std::cout << "Demon Has " << claptrap.getHit() << " hit_points" << std::endl;
+    std::cout << "Demon Has " << claptrap.getEnergy() << " energy_points" << std::endl;
+    std::cout << "Demon Has " << claptrap.getAttack() << " attack_points" << std::endl;
+    std::cout << "Devil Has " << scavtrap.getHit() << " hit_points" << std::endl;
+    std::cout << "Devil Has " << scavtrap.getEnergy() << " energy_points" << std::endl;
+    std::cout << "Devil Has " << scavtrap.getAttack() << " attack_points" << std::endl;
+    std::cout << "Love Has " << fragtrap.getHit() << " hit_points" << std::endl;
+    std::cout << "Love Has " << fragtrap.getEnergy() << " energy_points" << std::endl;
+    std::cout << "Love Has " << fragtrap.getAttack() << " attack_points" << std::endl;
+
+    std::cout << "--------------------" << std::endl;
 
     claptrap.attack("Angel");
     claptrap.takeDamage(20);
@@ -23,6 +35,8 @@ int main(void)
     fragtrap.takeDamage(20);
     fragtrap.beRepaired(10);
     fragtrap.highFivesGuys();
+
+    std::cout << "--------------------" << std::endl;
 
     return (0);
 }
