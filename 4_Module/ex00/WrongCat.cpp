@@ -7,25 +7,27 @@ WrongCat::WrongCat()
     return ;
 }
 
-WrongCat::WrongCat(const WrongCat &WrongCat)
+WrongCat::WrongCat(const WrongCat &wrongcat)
 {
     std::cout << "Default Constructor called for WrongCat" << std::endl;
-    *this = WrongCat;
+    *this = wrongcat;
     return ;
 }
 
-WrongCat& WrongCat::operator=(const WrongCat &WrongCat)
+WrongCat& WrongCat::operator=(const WrongCat &wrongcat)
 {
-    (void)WrongCat;
+    std::cout << "Assignation Operator called for WrongCat" << std::endl;
+    _type = wrongcat.getType();
     return (*this);
 }
-
 
 WrongCat::~WrongCat()
 {
     std::cout << "Destructor called for WrongCat" << std::endl;
     return ;
 }
+
+// MEMBER FUNCTIONS 
 
 void WrongCat::makeSound() const
 {

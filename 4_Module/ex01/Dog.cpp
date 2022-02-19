@@ -17,7 +17,10 @@ Dog::Dog(const Dog &dog)
 
 Dog& Dog::operator=(const Dog &dog)
 {
-    (void)dog;
+    _dogbrain = new Brain();
+    *_dogbrain = *dog._dogbrain;
+    std::cout << &_dogbrain << std::endl;
+    std::cout << &dog._dogbrain << std::endl;
     return (*this);
 }
 

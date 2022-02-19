@@ -16,7 +16,7 @@ Dog::Dog(const Dog &dog)
 
 Dog& Dog::operator=(const Dog &dog)
 {
-    (void)dog;
+    _type = dog.getType();
     return (*this);
 }
 
@@ -26,13 +26,10 @@ Dog::~Dog()
     return ;
 }
 
+// MEMBER FUNTIONS
+
 void Dog::makeSound() const
 {
     std::cout << "AUUUUUU" << std::endl;
     return ;
-}
-
-std::string Dog::getType() const
-{
-    return (_type);
 }

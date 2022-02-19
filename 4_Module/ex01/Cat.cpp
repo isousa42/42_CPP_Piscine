@@ -22,7 +22,7 @@ Cat::Cat(const Cat &cat)
 
 Cat& Cat::operator=(const Cat &cat)
 {
-    std::cout << "Assign Constructor called for Cat" << std::endl;
+    std::cout << "Assignation Constructor called for Cat" << std::endl;
 
     _catbrain = new Brain();
     *_catbrain = *cat._catbrain;

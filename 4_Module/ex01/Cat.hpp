@@ -8,9 +8,6 @@
 
 class Cat: public Animal {
 
-
-    protected:
-        std::string ideas[100];
     private:
         Brain *_catbrain;
 

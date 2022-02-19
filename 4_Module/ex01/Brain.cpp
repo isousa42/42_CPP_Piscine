@@ -6,16 +6,21 @@ Brain::Brain()
     return ;
 }
 
-Brain::Brain(const Brain &Brain)
+Brain::Brain(const Brain &brain)
 {
     std::cout << "Default Constructor called for Brain" << std::endl;
-    *this = Brain;
+    for (int i = 0; i < 100; i++)
+            this->ideas[i] = brain.ideas[i];
     return ;
 }
 
-Brain& Brain::operator=(const Brain &Brain)
+Brain& Brain::operator=(const Brain brain)
 {
-    (void)Brain;
+    if (this != &brain)
+    {
+        for (int i = 0; i < 100; i++)
+            this->ideas[i] = brain.ideas[i];
+    }
     return (*this);
 }
 

@@ -1,5 +1,5 @@
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -g -fsanitize=address
 RM = rm -f
 
 NAME = Animal

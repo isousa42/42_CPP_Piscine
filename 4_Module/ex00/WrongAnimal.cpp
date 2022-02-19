@@ -6,16 +6,17 @@ WrongAnimal::WrongAnimal()
     return ;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &WrongAnimal)
+WrongAnimal::WrongAnimal(const WrongAnimal &wronganimal)
 {
     std::cout << "Default Constructor called for WrongAnimal" << std::endl;
-    *this = WrongAnimal;
+    *this = wronganimal;
     return ;
 }
 
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal &WrongAnimal)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &wronganimal)
 {
-    (void)WrongAnimal;
+    std::cout << "Assignation Operator called for WrongAnimal" << std::endl;
+    _type = wronganimal.getType();
     return (*this);
 }
 
@@ -27,6 +28,7 @@ WrongAnimal::~WrongAnimal()
 
 void WrongAnimal::makeSound() const
 {
+    std::cout << " PIU PIU " << std::endl;
     return ;
 }
 

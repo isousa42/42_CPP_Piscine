@@ -7,7 +7,6 @@ Cat::Cat()
     return ;
 }
 
-
 Cat::Cat(const Cat &cat)
 {
     std::cout << "Copy Constructor called for Cat" << std::endl;
@@ -15,13 +14,12 @@ Cat::Cat(const Cat &cat)
     return ;
 }
 
-Cat& Cat::operator=(const Cat &cat)
+Cat& Cat::operator= (const Cat &cat)
 {
     std::cout << "Assignation Operator called for Cat" << std::endl;
     _type = cat.getType();
     return (*this);
 }
-
 
 Cat::~Cat()
 {
@@ -35,9 +33,4 @@ void Cat::makeSound() const
 {
     std::cout << "Miauuu" << std::endl;
     return ;
-}
-
-std::string Cat::getType() const
-{
-    return (_type);
 }
