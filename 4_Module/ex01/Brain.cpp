@@ -9,8 +9,11 @@ Brain::Brain()
 Brain::Brain(const Brain &brain)
 {
     std::cout << "Default Constructor called for Brain" << std::endl;
-    for (int i = 0; i < 100; i++)
+    if (this != &brain)
+    {
+        for (int i = 0; i < 100; i++)
             this->ideas[i] = brain.ideas[i];
+    }
     return ;
 }
 

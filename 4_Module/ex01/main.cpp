@@ -9,34 +9,49 @@ int main()
 {
     const Animal* array[10];
 
-    for(int i = 0; i < 10; i++)
-    {
-        if (i % 2)
+    std::cout << "--------------------" << std::endl;
+
+
+    for(int i = 0; i < 5; i++)
             array[i] = new Dog();
-        else
-            array[i] = new Cat();
+    for(int i = 5; i < 10; i++)
+        array[i] = new Cat();
 
-
-    }
-    // for(int i = 5; i < 10; i++)
-    //     array[i] = new Cat();
+    std::cout << "--------------------" << std::endl;
 
     for(int i = 0; i < 10; i++)
         delete array[i];
+
+    std::cout << "--------------------" << std::endl;
+
 
     Dog basic;
     {
         Dog tmp = basic;
     }
 
-    
+    std::cout << "--------------------" << std::endl;
 
-    // Cat gato;
-    // Cat copia(gato);
+    Cat other;
+    {
+        Cat tmp = other;
+    }
 
-    // Cat outro_gato;
-    // Cat copia_outro_gato;
-    // copia_outro_gato = outro_gato;
+    std::cout << "--------------------" << std::endl;
+
+
+    Cat gato;
+    Cat copia(gato);
+
+    std::cout << "--------------------" << std::endl;
+
+
+    Cat outro_gato;
+    Cat copia_outro_gato;
+    copia_outro_gato = outro_gato;
+
+    std::cout << "--------------------" << std::endl;
+
 
     return (0);
 }
