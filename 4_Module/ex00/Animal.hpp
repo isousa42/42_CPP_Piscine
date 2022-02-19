@@ -4,6 +4,12 @@
 
 # include <iostream>
 
+/* 
+** Virtual is used because the same funtion is present in Cat class, that derives from Animal Class.
+** If virtual is not used, the object from Cat class will call the makeSound() from Animal and not
+** from Cat as we want. (This is shown in the WrongAnimal and WrongCat implementation).
+*/
+
 class Animal {
 
     protected:
@@ -16,7 +22,7 @@ class Animal {
         virtual ~Animal();
         
         virtual void makeSound() const;
-        virtual std::string getType() const;
+        std::string getType() const;
 };
 
 #endif

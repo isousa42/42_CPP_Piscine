@@ -3,6 +3,11 @@
 
 # include <iostream>
 
+/*
+** In this class, I did not put virtual so the program can show the difference between the outputs
+** of the different classes.
+*/
+
 class WrongAnimal {
 
     protected:

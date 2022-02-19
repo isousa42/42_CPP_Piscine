@@ -1,9 +1,9 @@
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 RM = rm -f
 
-NAME = Animal
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+NAME = Exception
+SRCS = main.cpp Bureaucrat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
