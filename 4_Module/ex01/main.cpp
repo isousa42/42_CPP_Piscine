@@ -9,7 +9,7 @@ int main()
 {
     const Animal* array[10];
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "-------CREATE-------------" << std::endl;
 
 
     for(int i = 0; i < 5; i++)
@@ -17,12 +17,12 @@ int main()
     for(int i = 5; i < 10; i++)
         array[i] = new Cat();
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "------DELETE--------------" << std::endl;
 
     for(int i = 0; i < 10; i++)
         delete array[i];
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "--------TEST DEEPCOPY------------" << std::endl;
 
 
     Dog basic;
@@ -50,7 +50,7 @@ int main()
     Cat copia_outro_gato;
     copia_outro_gato = outro_gato;
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "--------DESTRUCTION------------" << std::endl;
 
 
     return (0);
