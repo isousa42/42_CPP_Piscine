@@ -14,10 +14,9 @@ Bureaucrat::~Bureaucrat()
 }
 
 
-Bureaucrat::Bureaucrat(const std::string &name)
+Bureaucrat::Bureaucrat(const std::string &name) : _name(name)
 {
     std::cout << "Default Constructor called for Bureaucrat" << std::endl;
-    _name = name;
     return ;
 }
 

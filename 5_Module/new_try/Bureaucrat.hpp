@@ -14,7 +14,7 @@ class Bureaucrat {
 
         Bureaucrat();
         ~Bureaucrat();
-        Bureaucrat::Bureaucrat(const std::string &name)
+        Bureaucrat::Bureaucrat(const std::string &name);
 
         Bureaucrat(const Bureaucrat &bureaucrat);
         Bureaucrat& operator=(const Bureaucrat &bureaucrat);
