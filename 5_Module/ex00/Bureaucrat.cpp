@@ -1,23 +1,26 @@
 #include "Bureaucrat.hpp"
 
+/*
+** Remember that, incrementing a grade 3 is equal do 2 (grade--);
+*/
+
 Bureaucrat::Bureaucrat()
 {
     std::cout << "Default Constructor called for Bureaucrat" << std::endl;
     return ;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     if (grade < 1)
     {
-        throw(Bureaucrat::GradeTooHighException());
+        throw(GradeTooHighException());
     }
     if (grade > 150)
     {
-        throw(Bureaucrat::GradeTooLowException());
+        throw(GradeTooLowException());
     }
-    std::cout << "Default Constructor with arg called for Bureaucrat" << std::endl;
-    _name = name;
+    std::cout << "Constructor called for Bureaucrat" << std::endl;
     _grade = grade;
     return ;
 
@@ -25,20 +28,21 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
 {
-    std::cout << "Default Constructor called for Bureaucrat" << std::endl;
+    std::cout << "Copy Construtor called for Bureaucrat" << std::endl;
     *this = bureaucrat;
     return ;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 {
-    (void)bureaucrat;
+    std::cout << "Assignation operator called for Bureaucrat" << std::endl;
+    _grade = bureaucrat.getGrade();
     return (*this);
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destructor called for Bureaucrat" << std::endl;
+    std::cout << "Default Destructor called for Bureaucrat" << std::endl;
     return ;
 }
 
@@ -56,20 +60,20 @@ void Bureaucrat::incGrade()
 {
     if (_grade == 1)
     {
-        throw(Bureaucrat::GradeTooHighException());
+        throw(GradeTooHighException());
     }
     else
-        _grade = _grade - 1;
+        _grade--;
 }
 
 void Bureaucrat::decGrade()
 {
     if (_grade == 150)
     {
-        throw(Bureaucrat::GradeTooLowException());
+        throw(GradeTooLowException());
     }
     else
-        _grade = _grade + 1;
+        _grade++;
 }
 
 std::ostream &operator<<( std::ostream & ost, Bureaucrat const &bur){
