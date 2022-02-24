@@ -8,9 +8,9 @@ Fixed::Fixed()
 {
     std::cout << "Default constructor called " << std::endl;
     _fixed_point = 0;
-} 
+}
 
-Fixed::Fixed(const int nbr)
+Fixed::Fixed(const int nbr) 
 {
     std::cout << "Int constructor called" << std::endl;
     _fixed_point = nbr * (1 << _frac_bits);
