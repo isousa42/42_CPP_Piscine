@@ -28,29 +28,6 @@ class Form {
         std::string getSigned() const;
         void beSigned(Bureaucrat &bur);
 
-
-
-
-
-
-        class GradeTooHighException : public std::exception 
-        {
-            public:
-                    virtual const char* what() const throw() 
-                    {
-                        return "Grade Too High Exception";
-                    }
-        };
-
-        class GradeTooLowException : public std::exception 
-        {
-            public:
-                    virtual const char* what() const throw() 
-                    {
-                        return "Grade Too Low Exception";
-                    }
-        };
-
 };
 
 std::ostream & operator <<(std::ostream &ost, Form const &form);

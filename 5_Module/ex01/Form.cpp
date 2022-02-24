@@ -18,7 +18,7 @@ Form::Form(const std::string name, const int grade_to_sign, const int grade_to_e
         throw(GradeTooHighException());
     if (grade_to_execute >= 151)
         throw(GradeTooLowException());
-    std::cout << "Default Constructor with arg called for Form" << std::endl;
+    std::cout << "Constructor called for Form" << std::endl;
 
     _signed = false;
     return ;
@@ -26,15 +26,15 @@ Form::Form(const std::string name, const int grade_to_sign, const int grade_to_e
 
 Form::Form(const Form &form) : _grade_to_sign(0), _grade_to_execute(0)
 {
-    std::cout << "Default Constructor called for Form" << std::endl;
-    _signed = false;
+    std::cout << "Copy Constructor called for Form" << std::endl;
     *this = form;
     return ;
 }
 
 Form& Form::operator=(const Form &form)
 {
-    (void)form;
+    std::cout << "Assignation Operator called for Form" << std::endl;
+    _signed = form._signed;
     return (*this);
 }
 
