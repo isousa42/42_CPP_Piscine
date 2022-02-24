@@ -5,8 +5,9 @@
 # include <iostream>
 
 /*
-** The Exception classes ar
-** 
+** The Exception classes define what will happen if an Exception is catched.
+** everytime that is a try, it will run the code and check if an exception is throw,
+** if it catches the exception, the what() funtion is defined here in the classes.
 */
 
 class Bureaucrat {
@@ -25,7 +26,6 @@ class Bureaucrat {
         int getGrade() const;
         void incGrade();
         void decGrade();
-
 
 };
 

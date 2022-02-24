@@ -2,6 +2,9 @@
 
 /*
 ** Remember that, incrementing a grade 3 is equal do 2 (grade--);
+** Everytime the conditions are not right we throw an exception, that will be catch
+** in the main program. This garantees that the program will not stop but does
+** what we want it to do when something doesn't happen as we want.
 */
 
 Bureaucrat::Bureaucrat()
