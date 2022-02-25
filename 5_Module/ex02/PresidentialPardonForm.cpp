@@ -7,7 +7,7 @@ PresidentialPardonForm::PresidentialPardonForm()
     return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target)  : Form("PresidentialPardonForm", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(std::string target)  : Form("PresidentialPardonForm", 25, 5)
 {
     std::cout << "Construtor Constructor called for PresidentialPardonForm" << std::endl;
     _target = target;

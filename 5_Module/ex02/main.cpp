@@ -10,7 +10,7 @@
 
 int main(void)
 {
-    Bureaucrat bur("Amelia", 30);
+    Bureaucrat bur("Amelia", 2);
     Bureaucrat other_bur("Fernanda", 150);
 
     std::cout << bur;

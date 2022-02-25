@@ -15,7 +15,7 @@ int main(void)
     std::cout << other.getName() << std::endl;
     std::cout << other.getGrade() << std::endl;
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "-----TO LOW---------------" << std::endl;
 
     try 
     {
@@ -26,7 +26,7 @@ int main(void)
         std::cout << error.what() << std::endl;
     }
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "------TO HIGH--------------" << std::endl;
 
     try 
     {
@@ -50,7 +50,7 @@ int main(void)
         std::cout << error.what() << std::endl;
     }
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "------DECREMENT--------------" << std::endl;
 
     try 
     {
@@ -62,7 +62,7 @@ int main(void)
     }
     std::cout << bur.getGrade() << std::endl;
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "-------INCREMENT-------------" << std::endl;
 
     try 
     {
@@ -74,7 +74,7 @@ int main(void)
     }
     std::cout << bur.getGrade() << std::endl;
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "--------INCREMENET------------" << std::endl;
 
     try 
     {
@@ -86,7 +86,7 @@ int main(void)
     }
     std::cout << other.getGrade() << std::endl;
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "-------DECREMENT-------------" << std::endl;
 
     try 
     {

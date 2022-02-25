@@ -10,7 +10,7 @@ int main(void)
     Form form("FORMA", 5, 10);
     Form other_form("OTHER_FORM", 35, 10);
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "------SHOW FORM--------------" << std::endl;
 
     std::cout << form.getGradeToExecute() << std::endl;
     std::cout << form.getGradeToSign() << std::endl;
@@ -42,7 +42,7 @@ int main(void)
     }
     std::cout << other_form.getSigned() << std::endl;
 
-    std::cout << "--------------------" << std::endl;
+    std::cout << "-------TRY LOW-------------" << std::endl;
 
     try 
     {
@@ -55,7 +55,7 @@ int main(void)
 
     std::cout << "--------------------" << std::endl;
 
-        try 
+    try 
     {
         Form try_form("TRY", 1, 149);
     }
@@ -64,9 +64,9 @@ int main(void)
         std::cout << error.what() << std::endl;
     }
 
-        std::cout << "--------------------" << std::endl;
+    std::cout << "-------TRY HIGH-------------" << std::endl;
 
-        try 
+    try 
     {
         Form try_form("TRY", -1, 149);
     }

@@ -38,7 +38,7 @@ void RobotomyRequestForm::action() const
     srand(time(0));
     int x = rand();
 
-    if (x <= RAND_MAX / 2)
+    if (x % 2 == 0)
         std::cout << " skjfh...a fceqjbf... " << _target << " has been robotomized sucessfully!" << std::endl;
     else
         std::cout << "Robotomy FAILED" << std::endl;
