@@ -5,6 +5,7 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 
 int main(void)
@@ -19,6 +20,11 @@ int main(void)
 
     rob.action();
     std::cout << rob;
+
+    PresidentialPardonForm pre("other");
+
+    pre.action();
+    std::cout << pre;
     
     return (0);
 }
