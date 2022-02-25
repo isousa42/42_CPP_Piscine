@@ -1,5 +1,6 @@
 #include "Form.hpp"
 
+
 Form::Form() : _grade_to_sign(0), _grade_to_execute(0)
 {
     std::cout << "Default Constructor called for Form" << std::endl;
@@ -26,15 +27,15 @@ Form::Form(const std::string name, const int grade_to_sign, const int grade_to_e
 
 Form::Form(const Form &form) : _grade_to_sign(0), _grade_to_execute(0)
 {
-    std::cout << "Default Constructor called for Form" << std::endl;
-    _signed = false;
+    std::cout << "Copy Construtor called for Form" << std::endl;
     *this = form;
     return ;
 }
 
 Form& Form::operator=(const Form &form)
 {
-    (void)form;
+    std::cout << "Assignation operator called for Form" << std::endl;
+    _signed = form._signed;
     return (*this);
 }
 
@@ -42,6 +43,11 @@ Form::~Form()
 {
     std::cout << "Destructor called for Form" << std::endl;
     return ;
+}
+
+void Form::action() const 
+{
+    return;
 }
 
 std::string Form::getName() const
@@ -81,6 +87,17 @@ void Form::beSigned(Bureaucrat &bur)
     }
     return ;
 }
+
+void Form::execute(Bureaucrat const &executor) const
+{
+    if (executor.getGrade() <= this->getGradeToSign() && executor.getGrade() <= this->getGradeToExecute())
+        this->action();
+    else
+        throw(GradeTooLowException());
+
+    return ;
+}
+
 
 std::ostream &operator<<( std::ostream & ost, Form const &form){
 	ost << form.getName() << ", grade to sign: " << form.getGradeToSign() << ", grade to execute: " << form.getGradeToExecute() << ", signed: " << form.getSigned() << std::endl;

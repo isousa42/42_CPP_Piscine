@@ -19,7 +19,7 @@ class RobotomyRequestForm : public Form {
         RobotomyRequestForm(const RobotomyRequestForm &robotomy);
         RobotomyRequestForm& operator=(const RobotomyRequestForm &robotomy);
         ~RobotomyRequestForm();
-        void action();
+        void action() const;
 
 };
 

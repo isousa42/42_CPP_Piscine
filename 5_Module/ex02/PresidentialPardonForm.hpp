@@ -19,7 +19,7 @@ class PresidentialPardonForm : public Form {
         PresidentialPardonForm(const PresidentialPardonForm &presidential);
         PresidentialPardonForm& operator=(const PresidentialPardonForm &presidential);
         ~PresidentialPardonForm();
-        void action();
+        void action() const;
 
 };
 

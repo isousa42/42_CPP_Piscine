@@ -33,9 +33,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     return ;
 }
 
-void ShrubberyCreationForm::action()
+void ShrubberyCreationForm::action() const
 {
-    std::cout << " I AM SHRUBBERY CREATION FORM" << std::endl;
 
     std::fstream file;
     std::string file_name;

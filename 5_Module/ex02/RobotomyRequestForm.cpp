@@ -33,10 +33,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
     return ;
 }
 
-void RobotomyRequestForm::action()
-{
-    std::cout << " I AM ROBOTOMY CREATION FORM" << std::endl;
-    
+void RobotomyRequestForm::action() const
+{    
     srand(time(0));
     int x = rand();
 

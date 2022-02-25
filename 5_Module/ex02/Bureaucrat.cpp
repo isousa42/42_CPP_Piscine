@@ -82,7 +82,20 @@ void Bureaucrat::signForm(const bool sign, const std::string form_name) const
 
 }
 
+void Bureaucrat::executeForm(const Form &form) const
+{
+    try
+    {
+        form.execute(*this);
+    }
+    catch (std::exception &error)
+    {
+        std::cout << error.what() << std::endl;
+    }
+
+}
+
 std::ostream &operator<<( std::ostream & ost, Bureaucrat const &bur){
-	ost << bur.getName() << ", bureaucrat grade: " << bur.getGrade();
+	ost << bur.getName() << ", bureaucrat grade: " << bur.getGrade() << std::endl;
 	return ost;
 }

@@ -5,8 +5,9 @@
 # include "Bureaucrat.hpp"
 # include <iostream>
 # include <string>
-#include <fstream>
+# include <fstream>
 
+class Bureaucrat;
 
 class Form {
 
@@ -29,6 +30,8 @@ class Form {
         int getGradeToExecute() const;
         std::string getSigned() const;
         void beSigned(Bureaucrat &bur);
+        void execute(Bureaucrat const &executor) const;
+        virtual void action() const;
 
 };
 

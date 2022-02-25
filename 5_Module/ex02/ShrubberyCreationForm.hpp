@@ -17,7 +17,7 @@ class ShrubberyCreationForm : public Form {
         ShrubberyCreationForm(const ShrubberyCreationForm &shrubberry);
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm &shrubbery);
         ~ShrubberyCreationForm();
-        void action();
+        void action() const;
 
 };
 
