@@ -82,17 +82,6 @@ void Form::beSigned(Bureaucrat &bur)
     return ;
 }
 
-// void Form::setGradeToSign(const int grade)
-// {
-//     _grade_to_sign = grade;
-// }
-
-// void Form::setGradeToExecute(int grade)
-// {
-//     _grade_to_execute = grade;
-// }
-
-
 std::ostream &operator<<( std::ostream & ost, Form const &form){
 	ost << form.getName() << ", grade to sign: " << form.getGradeToSign() << ", grade to execute: " << form.getGradeToExecute() << ", signed: " << form.getSigned() << std::endl;
 	return ost;

@@ -14,10 +14,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)  : Form("Shrubb
     return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubberyCreationForm) : Form("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubbery) : Form("ShrubberyCreationForm", 145, 137)
 {
     std::cout << "Copy Constructor called for ShrubberyCreationForm" << std::endl;
-    *this = shrubberyCreationForm;
+    *this = shrubbery;
     return ;
 }
 
@@ -36,5 +36,26 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 void ShrubberyCreationForm::action()
 {
     std::cout << " I AM SHRUBBERY CREATION FORM" << std::endl;
+
+    std::fstream file;
+    std::string file_name;
+    file_name = _target;
+    file_name.append("_shrubbery");
+    file.open(file_name.c_str(), std::ios::out | std::ios::in | std::ios::trunc);
+    if (!file)
+        std::cout << "ERROR CREATING FILE" << std::endl;
+    file << "         *         " << std::endl;
+    file << "        /|\\        " << std::endl;        
+    file << "       /*|O\\       " << std::endl;
+    file << "      /*/|\\*\\      " << std::endl;
+    file << "     /X/O|*\\X\\     " << std::endl;
+    file << "    /*/X/|\\X\\*\\    " << std::endl;
+    file << "   /O/*/X|*\\O\\X\\   " << std::endl;       
+    file << "  /*/O/X/|\\X\\O\\*\\  " << std::endl;
+    file << " /X/O/*/X|O\\X\\*\\O\\ " << std::endl;
+    file << "/O/X/*/O/|\\X\\*\\O\\X\\" << std::endl;
+    file << "        |X|        " << std::endl;
+    file << "        |X|        " << std::endl;
+    file.close();
 }
 

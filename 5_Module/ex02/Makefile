@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 NAME = Exception
-SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
