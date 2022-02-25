@@ -8,7 +8,7 @@
 
 class Form {
 
-    private:
+    protected:
 
         const std::string _name;
         bool _signed;
@@ -21,14 +21,14 @@ class Form {
         Form(const std::string name, const int grade_to_sign, const int grade_to_execute);
         Form(const Form &form);
         Form& operator=(const Form &form);
-        ~Form();
+        virtual ~Form() = 0;
         std::string getName() const;
         int getGradeToSign() const;
         int getGradeToExecute() const;
         std::string getSigned() const;
         void beSigned(Bureaucrat &bur);
-        void setGradeToSign(const int grade);
-        void setGradeToExecute(int grade)  = 0;
+        // void setGradeToSign(const int grade);
+        // void setGradeToExecute(int grade);
 };
 
 std::ostream & operator <<(std::ostream &ost, Form const &form);

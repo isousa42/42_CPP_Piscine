@@ -82,15 +82,15 @@ void Form::beSigned(Bureaucrat &bur)
     return ;
 }
 
-void Form::setGradeToSign(const int grade)
-{
-    _grade_to_sign = grade;
-}
+// void Form::setGradeToSign(const int grade)
+// {
+//     _grade_to_sign = grade;
+// }
 
-void Form::setGradeToExecute(int grade)
-{
-    _grade_to_execute = grade;
-}
+// void Form::setGradeToExecute(int grade)
+// {
+//     _grade_to_execute = grade;
+// }
 
 
 std::ostream &operator<<( std::ostream & ost, Form const &form){

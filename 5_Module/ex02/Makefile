@@ -1,9 +1,9 @@
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
+FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 NAME = Exception
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)

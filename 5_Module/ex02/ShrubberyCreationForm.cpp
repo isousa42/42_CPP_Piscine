@@ -7,22 +7,23 @@ ShrubberyCreationForm::ShrubberyCreationForm()
     return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)  : Form("ShrubberyCreationForm", 145, 137)
 {
-    std::cout << "Default Constructor with arg called for ShrubberyCreationForm" << std::endl;
+    std::cout << "Construtor Constructor called for ShrubberyCreationForm" << std::endl;
+    _target = target;
     return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &ShrubberyCreationForm) : _grade_to_sign(145), _grade_to_execute(137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubberyCreationForm) : Form("ShrubberyCreationForm", 145, 137)
 {
-    std::cout << "Default Constructor called for ShrubberyCreationForm" << std::endl;
-    *this = ShrubberyCreationForm;
+    std::cout << "Copy Constructor called for ShrubberyCreationForm" << std::endl;
+    *this = shrubberyCreationForm;
     return ;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &Shrubbery)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &shrubbery)
 {
-    (void)Shrubbery;
+    _target = shrubbery._target;
     return (*this);
 }
 
