@@ -25,7 +25,12 @@ class Conversion {
 
         Conversion& operator=( Conversion &conv);
 
-        void detectType(void);
+        void detectType(char *argv);
+        void convChar(void);
+        void convInt(void);
+        void convFloat(void);
+        void convDouble(void);
+
 
 
         int getType(void);

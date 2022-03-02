@@ -46,7 +46,7 @@ Conversion::Conversion(char *argv)
     std::cout << "Constructor called for Conversion" << std::endl;
     _type = 0;
     _input = static_cast<std::string>(argv);
-    detectType();
+    detectType(argv);
     return ;
 }
 
@@ -67,21 +67,51 @@ Conversion& Conversion::operator=( Conversion &conv)
 
 // MEMBER FUNCTIONS
 
-void Conversion::detectType(void)
+void Conversion::detectType(char *argv)
 {
     if (_input.length() == 1)
     {
         char c = _input[0];
         if (c >= 48 && c <= 57)
             this->setValue(c - 48);
-        this->setValue(c);
+        else
+            this->setValue(c);
     }
     else
     {
         char *end;
-        this->setValue(strtod(_input, &end));
+        this->setValue(strtod(argv, &end));
     }
+}
 
+void    Conversion::convChar(void)
+{
+    if (_value < 0 || _value > 126)
+        std::cout << "Char: Impossible" << std::endl;
+    else if (_value >= 0 && _value <= 31)
+        std::cout << "Char: Non displayable" << std::endl;
+    else
+    {
+        char c = static_cast<char>(_value);
+        std::cout << "Char: " << c << std::endl;
+    }
+}
+
+void    Conversion::convInt(void)
+{
+    int i = static_cast<int>(_value);
+    std::cout << "Integer: " << i << std::endl;    
+}
+
+void    Conversion::convFloat(void)
+{
+    float f = static_cast<float>(_value);
+    std::cout << "Float: " << f << std::endl;    
+}
+
+void    Conversion::convDouble(void)
+{
+    std::cout << "Double: " << _value << std::endl;        
 }
 
 // GETTERS AND SETTERS
