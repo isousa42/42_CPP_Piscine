@@ -32,19 +32,11 @@ Intern::~Intern()
 
 Form* Intern::makeForm(std::string const &form_name, std::string const &target)
 {
-    int i = -1;
-
-    (!form_name.compare("ShrubberyCreationForm") && (i = 0));
-    (!form_name.compare("RobotomyRequestForm") && (i = 1));
-    (!form_name.compare("PresidentialPardonForm") && (i = 2));
-    if (i >= 0)
-    {
-        Form *form;
-        form = (this->*funcs[i])(target);
-        return (form);
-    }
-    else
-        return (NULL);
+    Form *form = NULL;
+    (!form_name.compare("ShrubberyCreationForm") && (form = (this->*funcs[0])(target)));
+    (!form_name.compare("RobotomyRequestForm") && (form = (this->*funcs[1])(target)));
+    (!form_name.compare("PresidentialPardonForm") && (form = (this->*funcs[2])(target)));
+    return (form);
 }
 
 Form* Intern::createShru(std::string const &target)
