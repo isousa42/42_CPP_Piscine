@@ -1,22 +1,24 @@
-
-
-#include <iostream>
+#include "Data.hpp"
 
 /*
 ** REINTERPRET CAST - FOR THINGS WE DON'T KNOW WHAT IS (void)
-** uintptr_t = cena random
+** uintptr_t is an unsigned integer type that is capable of storing a data pointer. 
 **  data_type *var_name = 
 **      reinterpret_cast <data_type *>(pointer_variable);
 */ 
 
-
-int main (int argc, char ** argv)
+int main (void)
 {
-    (void)argc;
-    uintptr_t tipo = reinterpret_cast<uintptr_t>(argv[1]);
+    Data data("EU");
+    uintptr_t raw;
+    Data *other;
 
-    char *other = reinterpret_cast<char *>(tipo);
+    std::cout << data.getProof() << std::endl;
 
-    std::cout << other << std::endl;
+    raw = data.serialize(&data);
+    other = data.deserialize(raw);
 
+    std::cout << other->getProof() << std::endl;
+
+    return (0);
 }
