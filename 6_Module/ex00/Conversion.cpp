@@ -69,6 +69,7 @@ Conversion& Conversion::operator=( Conversion &conv)
 
 void Conversion::detectType(char *argv)
 {
+    std::string conv = static_cast<std::string>(argv);
     if (_input.length() == 1)
     {
         char c = _input[0];
@@ -77,6 +78,12 @@ void Conversion::detectType(char *argv)
         else
             this->setValue(c);
     }
+    else if (!(conv.compare("-inff")) || !(conv.compare("-inf")))
+        _type = 1;
+    else if (!(conv.compare("+inff")) || !(conv.compare("+inf")))
+        _type = 2;
+    else if (!(conv.compare("nanf")) || !(conv.compare("nan")))
+        _type = 3;
     else
     {
         char *end;
@@ -86,7 +93,7 @@ void Conversion::detectType(char *argv)
 
 void    Conversion::convChar(void)
 {
-    if (_value < 0 || _value > 126)
+    if (_type > 0 ||_value < 0 || _value > 126)
         std::cout << "Char: Impossible" << std::endl;
     else if (_value >= 0 && _value <= 31)
         std::cout << "Char: Non displayable" << std::endl;
@@ -99,19 +106,41 @@ void    Conversion::convChar(void)
 
 void    Conversion::convInt(void)
 {
-    int i = static_cast<int>(_value);
-    std::cout << "Integer: " << i << std::endl;    
+    if (_type > 0)
+        std::cout << "Integer: Impossible" << std::endl;    
+    else
+    {
+        int i = static_cast<int>(_value);
+        std::cout << "Integer: " << i << std::endl; 
+    }
+   
 }
 
 void    Conversion::convFloat(void)
 {
-    float f = static_cast<float>(_value);
-    std::cout << "Float: " << f << std::endl;    
+    if (_type == 1)
+        std::cout << "Float: -inff" << std::endl;    
+    else if (_type == 2)
+        std::cout << "Float: +inff" << std::endl; 
+    else if (_type == 3)
+        std::cout << "Float: nanf" << std::endl; 
+    else 
+    {
+        float f = static_cast<float>(_value);
+        std::cout << "Float: " << f << "f" << std::endl; 
+    }    
 }
 
 void    Conversion::convDouble(void)
 {
-    std::cout << "Double: " << _value << std::endl;        
+    if (_type == 1)
+        std::cout << "Float: -inf" << std::endl;    
+    else if (_type == 2)
+        std::cout << "Float: +inf" << std::endl; 
+    else if (_type == 3)
+        std::cout << "Float: nan" << std::endl; 
+    else 
+        std::cout << "Double: " << _value << std::endl;        
 }
 
 // GETTERS AND SETTERS

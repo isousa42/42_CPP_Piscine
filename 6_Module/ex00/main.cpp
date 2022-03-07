@@ -37,13 +37,10 @@ int main(int argc, char **argv)
     
     Conversion conv(argv[1]);
 
-    conv.detectType(argv[1]);
     conv.convChar();
     conv.convInt();
     conv.convFloat();
     conv.convDouble();
-
-    std::cout << conv << std::endl;
 
     return (0);
 

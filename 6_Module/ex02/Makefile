@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 NAME = Conversion
-SRCS = main.cpp
+SRCS = main.cpp functions.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
