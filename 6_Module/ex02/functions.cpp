@@ -48,11 +48,11 @@ Base* generate(void)
 void identify(Base* p)
 {
     if (dynamic_cast<A*>(p))
-        std::cout << "IDENTIFIED: A" << std::endl;
+        std::cout << "IDENTIFIED *: A" << std::endl;
     else if (dynamic_cast<B*>(p))
-        std::cout << "IDENTIFIED: B" << std::endl;
+        std::cout << "IDENTIFIED *: B" << std::endl;
     else if (dynamic_cast<C*>(p))
-        std::cout << "IDENTIFIED: C" << std::endl;
+        std::cout << "IDENTIFIED *: C" << std::endl;
     else
         std::cout << "NOT ABLE TO IDENTIFY" << std::endl;
 }
@@ -62,21 +62,21 @@ void identify(Base& p)
     try 
     {
         (void)dynamic_cast<A&>(p);
-        std::cout << "IDENTIFIED: A" << std::endl;
+        std::cout << "IDENTIFIED &: A" << std::endl;
     }
     catch (std::exception &error)
     {
         try 
         {
             (void)dynamic_cast<B&>(p);
-            std::cout << "IDENTIFIED: B" << std::endl;
+            std::cout << "IDENTIFIED &: B" << std::endl;
         }
         catch (std::exception &error)
         {
             try 
             {
                 (void)dynamic_cast<C&>(p);
-                std::cout << "IDENTIFIED: C" << std::endl;
+                std::cout << "IDENTIFIED &: C" << std::endl;
             }
             catch (std::exception &error)
             {
