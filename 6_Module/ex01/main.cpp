@@ -14,7 +14,7 @@
 
 int main (void)
 {
-    Data data("AHFSUGEFU");
+    Data data("OLA");
     uintptr_t raw;
     Data *other;
 
