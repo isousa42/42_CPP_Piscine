@@ -6,8 +6,6 @@
 # include <string>
 # include <cstdlib>
 
-
-
 class Conversion {
 
     private:
@@ -22,7 +20,6 @@ class Conversion {
         ~Conversion();
         Conversion(char *argv);
         Conversion( Conversion &conv);
-
         Conversion& operator=( Conversion &conv);
 
         void detectType(char *argv);
@@ -30,8 +27,6 @@ class Conversion {
         void convInt(void);
         void convFloat(void);
         void convDouble(void);
-
-
 
         int getType(void);
         std::string& getInput(void);

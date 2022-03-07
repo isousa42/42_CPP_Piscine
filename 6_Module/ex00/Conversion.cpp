@@ -80,7 +80,7 @@ void Conversion::detectType(char *argv)
     }
     else if (!(conv.compare("-inff")) || !(conv.compare("-inf")))
         _type = 1;
-    else if (!(conv.compare("+inff")) || !(conv.compare("+inf")))
+    else if (!(conv.compare("+inff")) || !(conv.compare("+inf")) || !(conv.compare("inff")) || !(conv.compare("inf")))
         _type = 2;
     else if (!(conv.compare("nanf")) || !(conv.compare("nan")))
         _type = 3;
