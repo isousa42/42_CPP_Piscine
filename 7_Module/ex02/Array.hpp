@@ -1,6 +1,8 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+# include <iostream>
+
 /*
 **  Class templates are like funtions templates. They are very util when we need a class to work with different data types.
 **  Examples: Array, Queues, Linked Lists, Binary Trees, etc etc...
@@ -14,8 +16,8 @@ class Array {
 
     private:
 
-        anyType *array;
-        int     size;
+        anyType *_array;
+        int     _size;
 
     public:
 
@@ -33,7 +35,7 @@ class Array {
 template <typename anyType>
 Array<anyType>::Array() 
 {
-    _array = NULL;
+    _array = 0;
     _size = 0;
 }
 
@@ -43,7 +45,7 @@ Array<anyType>::Array(unsigned int size)
     _array = new anyType[size];
     _size = size;
 
-    int i = 0;
+    unsigned int i = 0;
     while (i < size)
     {
         _array[i] = 0;
@@ -60,20 +62,19 @@ Array<anyType>::Array(const Array<anyType> &copy)
 template <typename anyType>
 Array<anyType>& Array<anyType>::operator=(const Array<anyType> &copy) 
 {
-    delete[] _array;
-    _size = copy.size;
+    _size = copy._size;
     if (_size > 0)
     {
         _array = new anyType[_size];
         int i = 0;
         while (i < _size)
         {
-            _array[i] = copy.array[i];
+            _array[i] = copy._array[i];
             i++;
         }
     }
     else
-    __array = NULL;
+        _array = 0;
 
     return (*this);
 
@@ -82,10 +83,10 @@ Array<anyType>& Array<anyType>::operator=(const Array<anyType> &copy)
 template <typename anyType>
 anyType& Array<anyType>::operator[](int index)
 {
-    if (i >= index || i < 0)
+    if (index >= _size || index < 0)
         throw(std::exception());
     else
-        return (_array[i]);
+        return (_array[index]);
 }
 
 template <typename anyType>

@@ -1,9 +1,9 @@
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 RM = rm -f
 
 NAME = Template
-SRCS = main.cpp Array.tpp
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
