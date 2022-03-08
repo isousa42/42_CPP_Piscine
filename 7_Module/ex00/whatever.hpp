@@ -15,10 +15,31 @@
 **  template <typename identifier> function_declaration;
 **
 **  Check this out: https://www.cplusplus.com/doc/oldtutorial/templates/
+**
+**  *NOTE: Awesome class is literally copy-paste from the evaluation PDF of the exarcise. Not done by me.
 */
 
+class Awesome
+{
+    public:
+    Awesome(void) : _n(0) {}
+    Awesome( int n ) : _n( n ) {}
+    Awesome & operator= (Awesome & a) { _n = a._n; return *this; }
+    bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+    bool operator!=( Awesome const & rhs ) const{ return (this->_n != rhs._n); }
+    bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+    bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+    bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+    bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+    int get_n() const { return _n; }
+    private:
+    int _n;
+};
+
+std::ostream & operator<<(std::ostream & o, const Awesome &a) { o << a.get_n(); return o; }
+
 template <class myType>
-void swap (myType a, myType b) 
+void swap (myType &a, myType &b) 
 {
     myType temp;
     temp = a;
