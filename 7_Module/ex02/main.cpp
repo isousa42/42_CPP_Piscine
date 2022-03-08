@@ -81,6 +81,19 @@ int main(void)
     std::cout << "----- SIZE FUNTION TEST -----" << std::endl;
 
     std::cout << "size = " << first.size() << std::endl;
+
+    std::cout << "-----COMPLEX ARRAY TEST (class) -----" << std::endl;
+
+    Array<std::string> words(5);
+
+    for(int i = 0; i < 5; i++)
+        words[i] = "ola";
+    for(int i = 0; i < 5; i++)
+        std::cout << "words = " << words[i] << std::endl;
+    std::cout << "size = " << words.size() << std::endl;
+    
+    
+
     
     return (0);
 }

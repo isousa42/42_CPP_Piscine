@@ -45,12 +45,12 @@ Array<anyType>::Array(unsigned int size)
     _array = new anyType[size];
     _size = size;
 
-    unsigned int i = 0;
-    while (i < size)
-    {
-        _array[i] = 0;
-        i++;
-    }
+    // unsigned int i = 0;
+    // while (i < size)
+    // {
+    //     _array[i] = 0;
+    //     i++;
+    // }
 }
 
 template <typename anyType>
