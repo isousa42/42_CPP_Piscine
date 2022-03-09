@@ -2,8 +2,8 @@ CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
-NAME = Exception
-SRCS = main.cpp Bureaucrat.cpp
+NAME = Containers
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
