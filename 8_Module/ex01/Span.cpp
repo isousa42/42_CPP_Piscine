@@ -47,6 +47,14 @@ void Span::addNumber(int add)
         throw(std::exception());
 }
 
+void Span::addNumber(int addFrom, int addTo)
+{
+    if (_vec.size() < _n)
+        _vec.push_back(add);
+    else
+        throw(std::exception());
+}
+
 int Span::shortestSpan(void)
 {
     if (_vec.size() < 2)

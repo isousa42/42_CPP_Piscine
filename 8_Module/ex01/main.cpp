@@ -52,6 +52,10 @@ int main(void)
         std::cout << sp.longestSpan() << std::endl;
     }
 
+    std::cout << "----- A LOT OF NUMBERS TEST -----" << std::endl;
+    Span lot(100);
+
+
 
     return (0);
 }
