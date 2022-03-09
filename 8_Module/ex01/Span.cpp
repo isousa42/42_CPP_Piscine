@@ -49,26 +49,40 @@ void Span::addNumber(int add)
 
 int Span::shortestSpan(void)
 {
+    if (_vec.size() < 2)
+        throw(std::exception());
+    
     std::vector<int>    copy = _vec;
-
+    std::vector<int>::iterator small;
     int smallest;
     int secSmallest;
-    std::vector<int>::iterator small = std::min_element(copy.begin(), copy.end());
-    smallest = *small;
-    copy.erase(small);
-    small = std::min_element(copy.begin(), copy.end());
-    secSmallest = *small;
+    int distance = 0;
+    int save_distance = this->longestSpan();
 
-    int distance = secSmallest - smallest;
-    return (distance);
+    while (copy.size() > 1)
+    {
+        small = std::min_element(copy.begin(), copy.end());
+        smallest = *small;
+        copy.erase(small);
+        small = std::min_element(copy.begin(), copy.end());
+        secSmallest = *small;
+        distance = secSmallest - smallest;
+        if (distance < save_distance)
+            save_distance = distance;
+    }
+
+    return (save_distance);
 
 }
 
 int Span::longestSpan(void)
 {
+    if (_vec.size() < 2)
+        throw(std::exception());
+
     std::vector<int>::iterator small = std::min_element(_vec.begin(), _vec.end());
     std::vector<int>::iterator big = std::max_element(_vec.begin(), _vec.end());
-
     int distance = *big - *small;
+
     return (distance);
 }
