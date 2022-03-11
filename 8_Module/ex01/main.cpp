@@ -12,7 +12,7 @@ int main(void)
     {
         try
         {
-            int x = rand() % 100;
+            int x = rand() % 950;
             span.addNumber(x);
             std::cout << "Added: " << x << std::endl;
         }
@@ -40,6 +40,14 @@ int main(void)
         std::cout << " Could not find: " << error.what() << std::endl;
     }
 
+    std::cout << "----- LOT OF NUMBERS -----" << std::endl;
+
+    Span alot(500);
+    alot.addNumber(0, 499);
+    std::cout << alot.shortestSpan() << std::endl;
+    std::cout << alot.longestSpan() << std::endl;
+    
+
     std::cout << "----- SUBJECT MAIN -----" << std::endl;
     {
         Span sp = Span(5);
@@ -51,9 +59,6 @@ int main(void)
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
     }
-
-    std::cout << "----- A LOT OF NUMBERS TEST -----" << std::endl;
-    Span lot(100);
 
 
 

@@ -49,10 +49,15 @@ void Span::addNumber(int add)
 
 void Span::addNumber(int addFrom, int addTo)
 {
-    if (_vec.size() < _n)
-        _vec.push_back(add);
-    else
-        throw(std::exception());
+    for(int i = addFrom; i < addTo; i++)
+    {
+        int x = rand() % 50;
+        if (_vec.size() < _n)
+            _vec.push_back(x * i);
+        else
+            throw(std::exception());
+    }
+
 }
 
 int Span::shortestSpan(void)
